@@ -57,8 +57,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 message.setText(text);
                 message.setMessageId((int)messageId);
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();List<InlineKeyboardButton> rowInline2 = new ArrayList<>();List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+
                 var A1A2ENGbutton = new InlineKeyboardButton();
                 A1A2ENGbutton.setText("Минимальный");
                 A1A2ENGbutton.setCallbackData("A1A2ENG_BUTTON");
@@ -99,6 +106,14 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
                 var A1A2GERbutton = new InlineKeyboardButton();
                 A1A2GERbutton.setText("Минимальный");
                 A1A2GERbutton.setCallbackData("A1A2GER_BUTTON");
@@ -108,10 +123,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                 var C1C2GERbutton = new InlineKeyboardButton();
                 C1C2GERbutton.setText("Максимальный");
                 C1C2GERbutton.setCallbackData("C1C2GER_BUTTON");
-                rowInline.add(A1A2GERbutton);
-                rowInline.add(B1B2GERbutton);
-                rowInline.add(C1C2GERbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(A1A2GERbutton);
+                rowInline2.add(B1B2GERbutton);
+                rowInline3.add(C1C2GERbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try
@@ -134,6 +151,14 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
                 var A1A2FREbutton = new InlineKeyboardButton();
                 A1A2FREbutton.setText("Минимальный");
                 A1A2FREbutton.setCallbackData("A1A2FRE_BUTTON");
@@ -143,10 +168,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                 var C1C2FREbutton = new InlineKeyboardButton();
                 C1C2FREbutton.setText("Максимальный");
                 C1C2FREbutton.setCallbackData("C1C2FRE_BUTTON");
-                rowInline.add(A1A2FREbutton);
-                rowInline.add(B1B2FREbutton);
-                rowInline.add(C1C2FREbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(A1A2FREbutton);
+                rowInline2.add(B1B2FREbutton);
+                rowInline3.add(C1C2FREbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try
@@ -167,6 +194,14 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
                 var ENG11button = new InlineKeyboardButton();
                 ENG11button.setText("I do Anna");
                 ENG11button.setCallbackData("ENG11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
@@ -184,12 +219,16 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline.add(ENG11button);
-                rowInline.add(ENG12button);
-                rowInline.add(ENG13button);
-                rowInline.add(BACKLANGbutton);
-                rowInline.add(BACKLEVELENGbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(ENG11button);
+                rowInline2.add(ENG12button);
+                rowInline3.add(ENG13button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try {
@@ -207,6 +246,14 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
                 var ENG21button = new InlineKeyboardButton();
                 ENG21button.setText("are you");
                 ENG21button.setCallbackData("ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
@@ -224,12 +271,16 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline.add(ENG21button);
-                rowInline.add(ENG22button);
-                rowInline.add(ENG23button);
-                rowInline.add(BACKLANGbutton);
-                rowInline.add(BACKLEVELENGbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(ENG21button);
+                rowInline2.add(ENG22button);
+                rowInline3.add(ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try {
@@ -247,6 +298,14 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
                 var ENG21button = new InlineKeyboardButton();
                 ENG21button.setText("are you");
                 ENG21button.setCallbackData("ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
@@ -264,12 +323,16 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline.add(ENG21button);
-                rowInline.add(ENG22button);
-                rowInline.add(ENG23button);
-                rowInline.add(BACKLANGbutton);
-                rowInline.add(BACKLEVELENGbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(ENG21button);
+                rowInline2.add(ENG22button);
+                rowInline3.add(ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try {
@@ -288,6 +351,14 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
                 var ENG21button = new InlineKeyboardButton();
                 ENG21button.setText("are you");
                 ENG21button.setCallbackData("ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
@@ -305,12 +376,16 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline.add(ENG21button);
-                rowInline.add(ENG22button);
-                rowInline.add(ENG23button);
-                rowInline.add(BACKLANGbutton);
-                rowInline.add(BACKLEVELENGbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(ENG21button);
+                rowInline2.add(ENG22button);
+                rowInline3.add(ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try {
@@ -328,6 +403,16 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
                 var ENG31button = new InlineKeyboardButton();
                 ENG31button.setText("our");
                 ENG31button.setCallbackData("ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
@@ -345,12 +430,16 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline.add(ENG31button);
-                rowInline.add(ENG32button);
-                rowInline.add(ENG33button);
-                rowInline.add(BACKLANGbutton);
-                rowInline.add(BACKLEVELENGbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(ENG31button);
+                rowInline2.add(ENG32button);
+                rowInline3.add(ENG33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try {
@@ -366,6 +455,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
                 var ENGbutton = new InlineKeyboardButton();
                 ENGbutton.setText("Английский");
                 ENGbutton.setCallbackData("ENG_BUTTON");
@@ -376,10 +470,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                 FREbutton.setText("Французский");
                 FREbutton.setCallbackData("FRE_BUTTON");
 
-                rowInline.add(ENGbutton);
-                rowInline.add(GERbutton);
-                rowInline.add(FREbutton);
-                rowsInline.add(rowInline);
+                rowInline1.add(ENGbutton);
+                rowInline2.add(GERbutton);
+                rowInline3.add(FREbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try
@@ -401,6 +497,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
                 var A1A2button = new InlineKeyboardButton();
                 A1A2button.setText("Минимальный");
                 A1A2button.setCallbackData("A1A2_BUTTON");
@@ -410,10 +511,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                 var C1C2button = new InlineKeyboardButton();
                 C1C2button.setText("Максимальный");
                 C1C2button.setCallbackData("C1C2_BUTTON");
-                rowInline.add(A1A2button);
-                rowInline.add(B1B2button);
-                rowInline.add(C1C2button);
-                rowsInline.add(rowInline);
+                rowInline1.add(A1A2button);
+                rowInline2.add(B1B2button);
+                rowInline3.add(C1C2button);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try
@@ -435,6 +538,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
                 var A1A2button = new InlineKeyboardButton();
                 A1A2button.setText("Минимальный");
                 A1A2button.setCallbackData("A1A2_BUTTON");
@@ -444,10 +552,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                 var C1C2button = new InlineKeyboardButton();
                 C1C2button.setText("Максимальный");
                 C1C2button.setCallbackData("C1C2_BUTTON");
-                rowInline.add(A1A2button);
-                rowInline.add(B1B2button);
-                rowInline.add(C1C2button);
-                rowsInline.add(rowInline);
+                rowInline1.add(A1A2button);
+                rowInline2.add(B1B2button);
+                rowInline3.add(C1C2button);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try
@@ -469,6 +579,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
                 List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
                 var A1A2button = new InlineKeyboardButton();
                 A1A2button.setText("Минимальный");
                 A1A2button.setCallbackData("A1A2_BUTTON");
@@ -478,10 +593,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                 var C1C2button = new InlineKeyboardButton();
                 C1C2button.setText("Максимальный");
                 C1C2button.setCallbackData("C1C2_BUTTON");
-                rowInline.add(A1A2button);
-                rowInline.add(B1B2button);
-                rowInline.add(C1C2button);
-                rowsInline.add(rowInline);
+                rowInline1.add(A1A2button);
+                rowInline2.add(B1B2button);
+                rowInline3.add(C1C2button);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
                 try
@@ -504,6 +621,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
         List<InlineKeyboardButton> rowInline = new ArrayList<>();
+        List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+        List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+        List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
         var ENGbutton = new InlineKeyboardButton();
         ENGbutton.setText("Английский");
         ENGbutton.setCallbackData("ENG_BUTTON");
@@ -514,33 +634,26 @@ public class TelegramBot extends TelegramLongPollingBot {
         FREbutton.setText("Французский");
         FREbutton.setCallbackData("FRE_BUTTON");
 
-        rowInline.add(ENGbutton);
-        rowInline.add(GERbutton);
-        rowInline.add(FREbutton);
+        rowInline1.add(ENGbutton);
+        rowInline2.add(GERbutton);
+        rowInline3.add(FREbutton);
 
-
-
+        rowsInline.add(rowInline1);
+        rowsInline.add(rowInline2);
+        rowsInline.add(rowInline3);
         var BACKLANGbutton = new InlineKeyboardButton();
         BACKLANGbutton.setText("Вернуться к выбору языка");
         BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-
-
         var BACKLEVELENGbutton = new InlineKeyboardButton();
         BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
         BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
         var BACKLEVELGERbutton = new InlineKeyboardButton();
         BACKLEVELGERbutton.setText("Вернуться к выбору уровня языка");
         BACKLEVELGERbutton.setCallbackData("BACKLEVELGER_BUTTON");
-
         var BACKLEVELFREbutton = new InlineKeyboardButton();
         BACKLEVELFREbutton.setText("Вернуться к выбору уровня языка");
         BACKLEVELFREbutton.setCallbackData("BACKLEVELFRE_BUTTON");
-
-
-
         rowsInline.add(rowInline);
-
         markupInline.setKeyboard(rowsInline);
         message.setReplyMarkup(markupInline);
         try
@@ -564,8 +677,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         catch (TelegramApiException e)
         {
 
-
         }
     }
-
 }
