@@ -3,23 +3,28 @@ package com.example.langbot.service;
 
 
 import com.example.langbot.config.BotConfig;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-
+@Slf4j
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
-
-    final BotConfig config;
+    @Autowired
+    private final BotConfig config;
     public TelegramBot(BotConfig config) {this.config = config;}
+
     @Override
     public String getBotUsername() {return config.getBotName();}
     @Override
@@ -60,7 +65,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             long chatId = update.getCallbackQuery().getMessage().getChatId();
             if(callbackData.equals("ENG_BUTTON"))
             {
-
                 String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык";
                 EditMessageText message = new EditMessageText();
 
@@ -110,7 +114,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             {
                 String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык";
                 EditMessageText message = new EditMessageText();
-
                 message.setChatId(String.valueOf(chatId));
                 message.setText(text);
                 message.setMessageId((int)messageId);
@@ -1196,6 +1199,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 
     }
+
+
     private void startCommandReceived(long chatId, String name)
     {
         SendMessage message = new SendMessage();
@@ -1239,6 +1244,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         rowsInline.add(rowInline);
         markupInline.setKeyboard(rowsInline);
         message.setReplyMarkup(markupInline);
+        log.info("Replied to user" + name);
         try
         {
             execute(message);
