@@ -152,7 +152,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 catch (TelegramApiException e)
                 {
                 }
-            }
+            } //sfsf
             if(callbackData.equals("FRE_BUTTON"))
             {
 
