@@ -1,7 +1,6 @@
 package com.example.langbot.service;
 
 
-
 import com.example.langbot.config.BotConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +19,22 @@ import java.util.ArrayList;
 import java.util.List;
 @Slf4j
 @Component
-public class TelegramBot extends TelegramLongPollingBot {
+public class TelegramBot extends TelegramLongPollingBot
+{
     @Autowired
     private final BotConfig config;
     public TelegramBot(BotConfig config) {this.config = config;}
+    int a = 0; int b = 0; //A1A2 - eng
+    int c = 0; int d = 0; //B1B2
+    int i = 0; int f = 0; //C1C2
 
+    int a1 = 0; int b1 = 0; // A1A2 - ger
+    int c1 = 0; int d1 = 0;  //B1B2
+    int  i1 = 0; int f1 = 0; // C1C2
+
+    int a2 = 0; int b2 = 0; // A1A2 - fre
+    int c2 = 0; int d2 = 0;  //B1B2
+    int  i2 = 0; int f2 = 0; // C1C2
     @Override
     public String getBotUsername() {return config.getBotName();}
     @Override
@@ -32,17 +42,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) //содержит информацию о том что присылается боту
     {
-        int a = 0; int b = 0; //A1A2 - eng
-        int c = 0; int d = 0; //B1B2
-        int i = 0; int f = 0; //C1C2
 
-        int a1 = 0; int b1 = 0; // A1A2 - ger
-        int c1 = 0; int d1 = 0;  //B1B2
-        int  i1 = 0; int f1 = 0; // C1C2
-
-        int a2 = 0; int b2 = 0; // A1A2 - fre
-        int c2 = 0; int d2 = 0;  //B1B2
-        int  i2 = 0; int f2 = 0; // C1C2
 
         if(update.hasMessage() && update.getMessage().hasText())
         {
@@ -152,7 +152,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 catch (TelegramApiException e)
                 {
                 }
-            } //sfsf
+            }
             if(callbackData.equals("FRE_BUTTON"))
             {
 
@@ -198,7 +198,10 @@ public class TelegramBot extends TelegramLongPollingBot {
                 {
                 }
             }
-            if(callbackData.equals("A1A2ENG_BUTTON")) {
+            if(callbackData.equals("A1A2ENG_BUTTON"))
+            {
+                a = 0;
+                b = 0;
                 String text = "Выберите правильный ответ в этом диалоге. Hello! I’m Susanna. What’s your name?";
                 EditMessageText message = new EditMessageText();
 
@@ -216,15 +219,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
 
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-                var ENG11button = new InlineKeyboardButton();
-                ENG11button.setText("I do Anna");
-                ENG11button.setCallbackData("ENG11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG12button = new InlineKeyboardButton();
-                ENG12button.setText("My name Anna");
-                ENG12button.setCallbackData("ENG12_BUTTON");
-                var ENG13button = new InlineKeyboardButton();
-                ENG13button.setText("My name is Anna");
-                ENG13button.setCallbackData("ENG13_BUTTON");
+                var A1A2ENG11button = new InlineKeyboardButton();
+                A1A2ENG11button.setText("I do Anna");
+                A1A2ENG11button.setCallbackData("A1A2ENG11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG12button = new InlineKeyboardButton();
+                A1A2ENG12button.setText("My name Anna");
+                A1A2ENG12button.setCallbackData("A1A2ENG12_BUTTON");
+                var A1A2ENG13button = new InlineKeyboardButton();
+                A1A2ENG13button.setText("My name is Anna");
+                A1A2ENG13button.setCallbackData("A1A2ENG13_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -233,9 +236,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG11button);
-                rowInline2.add(ENG12button);
-                rowInline3.add(ENG13button);
+                rowInline1.add(A1A2ENG11button);
+                rowInline2.add(A1A2ENG12button);
+                rowInline3.add(A1A2ENG13button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -250,7 +253,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG11_BUTTON")) {
+            if(callbackData.equals("A1A2ENG11_BUTTON")) {
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. My sister's friend is (...) trained teacher.";
                 EditMessageText message = new EditMessageText();
 
@@ -268,15 +271,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
 
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-                var ENG21button = new InlineKeyboardButton();
-                ENG21button.setText("the");
-                ENG21button.setCallbackData("ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG22button = new InlineKeyboardButton();
-                ENG22button.setText("a");
-                ENG22button.setCallbackData("ENG22_BUTTON"); // правильный ответ
-                var ENG23button = new InlineKeyboardButton();
-                ENG23button.setText("an");
-                ENG23button.setCallbackData("ENG23_BUTTON");
+                var A1A2ENG21button = new InlineKeyboardButton();
+                A1A2ENG21button.setText("the");
+                A1A2ENG21button.setCallbackData("A1A2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG22button = new InlineKeyboardButton();
+                A1A2ENG22button.setText("a");
+                A1A2ENG22button.setCallbackData("A1A2ENG22_BUTTON"); // правильный ответ
+                var A1A2ENG23button = new InlineKeyboardButton();
+                A1A2ENG23button.setText("an");
+                A1A2ENG23button.setCallbackData("A1A2ENG23_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -285,9 +288,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG21button);
-                rowInline2.add(ENG22button);
-                rowInline3.add(ENG23button);
+                rowInline1.add(A1A2ENG21button);
+                rowInline2.add(A1A2ENG22button);
+                rowInline3.add(A1A2ENG23button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -305,7 +308,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
                 }
             }
-            if(callbackData.equals("ENG12_BUTTON")) {
+            if(callbackData.equals("A1A2ENG12_BUTTON")) {
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. My sister's friend is (...) trained teacher.";
                 EditMessageText message = new EditMessageText();
 
@@ -323,15 +326,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
 
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-                var ENG21button = new InlineKeyboardButton();
-                ENG21button.setText("the");
-                ENG21button.setCallbackData("ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG22button = new InlineKeyboardButton();
-                ENG22button.setText("a");
-                ENG22button.setCallbackData("ENG22_BUTTON");
-                var ENG23button = new InlineKeyboardButton();
-                ENG23button.setText("an");
-                ENG23button.setCallbackData("ENG23_BUTTON");
+                var A1A2ENG21button = new InlineKeyboardButton();
+                A1A2ENG21button.setText("the");
+                A1A2ENG21button.setCallbackData("A1A2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG22button = new InlineKeyboardButton();
+                A1A2ENG22button.setText("a");
+                A1A2ENG22button.setCallbackData("A1A2ENG22_BUTTON");
+                var A1A2ENG23button = new InlineKeyboardButton();
+                A1A2ENG23button.setText("an");
+                A1A2ENG23button.setCallbackData("A1A2ENG23_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -340,9 +343,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG21button);
-                rowInline2.add(ENG22button);
-                rowInline3.add(ENG23button);
+                rowInline1.add(A1A2ENG21button);
+                rowInline2.add(A1A2ENG22button);
+                rowInline3.add(A1A2ENG23button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -357,7 +360,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG13_BUTTON")) {
+            if(callbackData.equals("A1A2ENG13_BUTTON")) {
                 a += 1;
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. My sister's friend is (...) trained teacher.";
                 EditMessageText message = new EditMessageText();
@@ -376,15 +379,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
 
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-                var ENG21button = new InlineKeyboardButton();
-                ENG21button.setText("the");
-                ENG21button.setCallbackData("ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG22button = new InlineKeyboardButton();
-                ENG22button.setText("a");
-                ENG22button.setCallbackData("ENG22_BUTTON");
-                var ENG23button = new InlineKeyboardButton();
-                ENG23button.setText("an");
-                ENG23button.setCallbackData("ENG23_BUTTON");
+                var A1A2ENG21button = new InlineKeyboardButton();
+                A1A2ENG21button.setText("the");
+                A1A2ENG21button.setCallbackData("A1A2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG22button = new InlineKeyboardButton();
+                A1A2ENG22button.setText("a");
+                A1A2ENG22button.setCallbackData("A1A2ENG22_BUTTON");
+                var A1A2ENG23button = new InlineKeyboardButton();
+                A1A2ENG23button.setText("an");
+                A1A2ENG23button.setCallbackData("A1A2ENG23_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -393,9 +396,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG21button);
-                rowInline2.add(ENG22button);
-                rowInline3.add(ENG23button);
+                rowInline1.add(A1A2ENG21button);
+                rowInline2.add(A1A2ENG22button);
+                rowInline3.add(A1A2ENG23button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -410,7 +413,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG21_BUTTON")) {
+            if(callbackData.equals("A1A2ENG21_BUTTON")) {
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. My parents are rich. That’s (...) new house.";
                 EditMessageText message = new EditMessageText();
 
@@ -430,15 +433,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                var ENG31button = new InlineKeyboardButton();
-                ENG31button.setText("our"); // правильный ответ
-                ENG31button.setCallbackData("ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG32button = new InlineKeyboardButton();
-                ENG32button.setText("mine");
-                ENG32button.setCallbackData("ENG32_BUTTON");
-                var ENG33button = new InlineKeyboardButton();
-                ENG33button.setText("theirs");
-                ENG33button.setCallbackData("ENG33_BUTTON");
+                var A1A2ENG31button = new InlineKeyboardButton();
+                A1A2ENG31button.setText("our"); // правильный ответ
+                A1A2ENG31button.setCallbackData("A1A2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG32button = new InlineKeyboardButton();
+                A1A2ENG32button.setText("mine");
+                A1A2ENG32button.setCallbackData("A1A2ENG32_BUTTON");
+                var A1A2ENG33button = new InlineKeyboardButton();
+                A1A2ENG33button.setText("theirs");
+                A1A2ENG33button.setCallbackData("A1A2ENG33_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -447,9 +450,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG31button);
-                rowInline2.add(ENG32button);
-                rowInline3.add(ENG33button);
+                rowInline1.add(A1A2ENG31button);
+                rowInline2.add(A1A2ENG32button);
+                rowInline3.add(A1A2ENG33button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -464,7 +467,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG22_BUTTON")) {
+            if(callbackData.equals("A1A2ENG22_BUTTON")) {
                 b += 1;
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. My parents are rich. That’s (...) new house.";
                 EditMessageText message = new EditMessageText();
@@ -485,15 +488,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                var ENG31button = new InlineKeyboardButton();
-                ENG31button.setText("our");
-                ENG31button.setCallbackData("ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG32button = new InlineKeyboardButton();
-                ENG32button.setText("mine");
-                ENG32button.setCallbackData("ENG32_BUTTON");
-                var ENG33button = new InlineKeyboardButton();
-                ENG33button.setText("theirs");
-                ENG33button.setCallbackData("ENG33_BUTTON");
+                var A1A2ENG31button = new InlineKeyboardButton();
+                A1A2ENG31button.setText("our");
+                A1A2ENG31button.setCallbackData("A1A2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG32button = new InlineKeyboardButton();
+                A1A2ENG32button.setText("mine");
+                A1A2ENG32button.setCallbackData("A1A2ENG32_BUTTON");
+                var A1A2ENG33button = new InlineKeyboardButton();
+                A1A2ENG33button.setText("theirs");
+                A1A2ENG33button.setCallbackData("A1A2ENG33_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -502,9 +505,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG31button);
-                rowInline2.add(ENG32button);
-                rowInline3.add(ENG33button);
+                rowInline1.add(A1A2ENG31button);
+                rowInline2.add(A1A2ENG32button);
+                rowInline3.add(A1A2ENG33button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -519,7 +522,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG23_BUTTON")) {
+            if(callbackData.equals("A1A2ENG23_BUTTON")) {
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. My parents are rich. That’s (...) new house.";
                 EditMessageText message = new EditMessageText();
 
@@ -539,15 +542,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                var ENG31button = new InlineKeyboardButton();
-                ENG31button.setText("our");
-                ENG31button.setCallbackData("ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG32button = new InlineKeyboardButton();
-                ENG32button.setText("mine");
-                ENG32button.setCallbackData("ENG32_BUTTON");
-                var ENG33button = new InlineKeyboardButton();
-                ENG33button.setText("theirs");
-                ENG33button.setCallbackData("ENG33_BUTTON");
+                var A1A2ENG31button = new InlineKeyboardButton();
+                A1A2ENG31button.setText("our");
+                A1A2ENG31button.setCallbackData("A1A2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG32button = new InlineKeyboardButton();
+                A1A2ENG32button.setText("mine");
+                A1A2ENG32button.setCallbackData("A1A2ENG32_BUTTON");
+                var A1A2ENG33button = new InlineKeyboardButton();
+                A1A2ENG33button.setText("theirs");
+                A1A2ENG33button.setCallbackData("A1A2ENG33_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -556,9 +559,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG31button);
-                rowInline2.add(ENG32button);
-                rowInline3.add(ENG33button);
+                rowInline1.add(A1A2ENG31button);
+                rowInline2.add(A1A2ENG32button);
+                rowInline3.add(A1A2ENG33button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -573,7 +576,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG31_BUTTON")) {
+            if(callbackData.equals("A1A2ENG31_BUTTON")) {
                 a += 1;
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. This is the university (...) i studied economics.";
                 EditMessageText message = new EditMessageText();
@@ -594,15 +597,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                var ENG41button = new InlineKeyboardButton();
-                ENG41button.setText("when");
-                ENG41button.setCallbackData("ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG42button = new InlineKeyboardButton();
-                ENG42button.setText("where"); // правильный ответ
-                ENG42button.setCallbackData("ENG42_BUTTON");
-                var ENG43button = new InlineKeyboardButton();
-                ENG43button.setText("who");
-                ENG43button.setCallbackData("ENG43_BUTTON");
+                var A1A2ENG41button = new InlineKeyboardButton();
+                A1A2ENG41button.setText("when");
+                A1A2ENG41button.setCallbackData("A1A2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG42button = new InlineKeyboardButton();
+                A1A2ENG42button.setText("where"); // правильный ответ
+                A1A2ENG42button.setCallbackData("A1A2ENG42_BUTTON");
+                var A1A2ENG43button = new InlineKeyboardButton();
+                A1A2ENG43button.setText("who");
+                A1A2ENG43button.setCallbackData("A1A2ENG43_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -611,9 +614,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG41button);
-                rowInline2.add(ENG42button);
-                rowInline3.add(ENG43button);
+                rowInline1.add(A1A2ENG41button);
+                rowInline2.add(A1A2ENG42button);
+                rowInline3.add(A1A2ENG43button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -628,7 +631,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG32_BUTTON")) {
+            if(callbackData.equals("A1A2ENG32_BUTTON")) {
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. This is the university (...) i studied economics.";
                 EditMessageText message = new EditMessageText();
 
@@ -648,15 +651,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                var ENG41button = new InlineKeyboardButton();
-                ENG41button.setText("when");
-                ENG41button.setCallbackData("ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG42button = new InlineKeyboardButton();
-                ENG42button.setText("where"); // правильный ответ
-                ENG42button.setCallbackData("ENG42_BUTTON");
-                var ENG43button = new InlineKeyboardButton();
-                ENG43button.setText("who");
-                ENG43button.setCallbackData("ENG43_BUTTON");
+                var A1A2ENG41button = new InlineKeyboardButton();
+                A1A2ENG41button.setText("when");
+                A1A2ENG41button.setCallbackData("A1A2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG42button = new InlineKeyboardButton();
+                A1A2ENG42button.setText("where"); // правильный ответ
+                A1A2ENG42button.setCallbackData("A1A2ENG42_BUTTON");
+                var A1A2ENG43button = new InlineKeyboardButton();
+                A1A2ENG43button.setText("who");
+                A1A2ENG43button.setCallbackData("A1A2ENG43_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -665,9 +668,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG41button);
-                rowInline2.add(ENG42button);
-                rowInline3.add(ENG43button);
+                rowInline1.add(A1A2ENG41button);
+                rowInline2.add(A1A2ENG42button);
+                rowInline3.add(A1A2ENG43button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -682,7 +685,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG33_BUTTON")) {
+            if(callbackData.equals("A1A2ENG33_BUTTON")) {
                 String text = "Выберите вариант ответа, который должен стоять на месте скобок. This is the university (...) i studied economics.";
                 EditMessageText message = new EditMessageText();
 
@@ -702,15 +705,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                 List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                var ENG41button = new InlineKeyboardButton();
-                ENG41button.setText("when");
-                ENG41button.setCallbackData("ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var ENG42button = new InlineKeyboardButton();
-                ENG42button.setText("where"); // правильный ответ
-                ENG42button.setCallbackData("ENG42_BUTTON");
-                var ENG43button = new InlineKeyboardButton();
-                ENG43button.setText("who");
-                ENG43button.setCallbackData("ENG43_BUTTON");
+                var A1A2ENG41button = new InlineKeyboardButton();
+                A1A2ENG41button.setText("when");
+                A1A2ENG41button.setCallbackData("A1A2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2ENG42button = new InlineKeyboardButton();
+                A1A2ENG42button.setText("where"); // правильный ответ
+                A1A2ENG42button.setCallbackData("A1A2ENG42_BUTTON");
+                var A1A2ENG43button = new InlineKeyboardButton();
+                A1A2ENG43button.setText("who");
+                A1A2ENG43button.setCallbackData("A1A2ENG43_BUTTON");
 
                 var BACKLANGbutton = new InlineKeyboardButton();
                 BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -719,9 +722,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                 BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                 BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                rowInline1.add(ENG41button);
-                rowInline2.add(ENG42button);
-                rowInline3.add(ENG43button);
+                rowInline1.add(A1A2ENG41button);
+                rowInline2.add(A1A2ENG42button);
+                rowInline3.add(A1A2ENG43button);
                 rowInline4.add(BACKLANGbutton);
                 rowInline5.add(BACKLEVELENGbutton);
                 rowsInline.add(rowInline1);
@@ -736,7 +739,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                 }
             }
-            if(callbackData.equals("ENG41_BUTTON")) {
+            if(callbackData.equals("A1A2ENG41_BUTTON")) {
                 if (a == b && a > 1 && b > 1)
                 {
                     String text = "Выберите вариант ответа, который должен стоять на месте скобок. Where (...) you go on holiday last year?";
@@ -758,15 +761,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                     List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                    var ENG51button = new InlineKeyboardButton();
-                    ENG51button.setText("do");
-                    ENG51button.setCallbackData("ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                    var ENG52button = new InlineKeyboardButton();
-                    ENG52button.setText("did"); // правильный ответ
-                    ENG52button.setCallbackData("ENG52_BUTTON");
-                    var ENG53button = new InlineKeyboardButton();
-                    ENG53button.setText("were");
-                    ENG53button.setCallbackData("ENG53_BUTTON");
+                    var A1A2ENG51button = new InlineKeyboardButton();
+                    A1A2ENG51button.setText("do");
+                    A1A2ENG51button.setCallbackData("A1A2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var A1A2ENG52button = new InlineKeyboardButton();
+                    A1A2ENG52button.setText("did"); // правильный ответ
+                    A1A2ENG52button.setCallbackData("A1A2ENG52_BUTTON");
+                    var A1A2ENG53button = new InlineKeyboardButton();
+                    A1A2ENG53button.setText("were");
+                    A1A2ENG53button.setCallbackData("A1A2ENG53_BUTTON");
 
                     var BACKLANGbutton = new InlineKeyboardButton();
                     BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -775,9 +778,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                     BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                     BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                    rowInline1.add(ENG51button);
-                    rowInline2.add(ENG52button);
-                    rowInline3.add(ENG53button);
+                    rowInline1.add(A1A2ENG51button);
+                    rowInline2.add(A1A2ENG52button);
+                    rowInline3.add(A1A2ENG53button);
                     rowInline4.add(BACKLANGbutton);
                     rowInline5.add(BACKLEVELENGbutton);
                     rowsInline.add(rowInline1);
@@ -794,7 +797,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }
                 else
                 {
-                    if (a < b)
+                    if (a < b && a > 0)
                     {
                         String text = "Ваш уровень владения английским языком соответствует уровню А2";
                         EditMessageText message = new EditMessageText();
@@ -806,7 +809,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                         } catch (TelegramApiException e) {
                         }
                     }
-                    if (a > b)
+                    if (a > b && a > 1)
                     {
                         String text = "Ваш уровень владения английским языком соответствует уровню А1";
                         EditMessageText message = new EditMessageText();
@@ -820,7 +823,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     }
                 }
             }
-            if(callbackData.equals("ENG42_BUTTON"))
+            if(callbackData.equals("A1A2ENG42_BUTTON"))
             {
                 b += 1;
                 if (a == b && a > 1 && b > 1)
@@ -844,15 +847,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                     List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                    var ENG51button = new InlineKeyboardButton();
-                    ENG51button.setText("do");
-                    ENG51button.setCallbackData("ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                    var ENG52button = new InlineKeyboardButton();
-                    ENG52button.setText("did"); // правильный ответ
-                    ENG52button.setCallbackData("ENG52_BUTTON");
-                    var ENG53button = new InlineKeyboardButton();
-                    ENG53button.setText("were");
-                    ENG53button.setCallbackData("ENG53_BUTTON");
+                    var A1A2ENG51button = new InlineKeyboardButton();
+                    A1A2ENG51button.setText("do");
+                    A1A2ENG51button.setCallbackData("A1A2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var A1A2ENG52button = new InlineKeyboardButton();
+                    A1A2ENG52button.setText("did"); // правильный ответ
+                    A1A2ENG52button.setCallbackData("A1A2ENG52_BUTTON");
+                    var A1A2ENG53button = new InlineKeyboardButton();
+                    A1A2ENG53button.setText("were");
+                    A1A2ENG53button.setCallbackData("A1A2ENG53_BUTTON");
 
                     var BACKLANGbutton = new InlineKeyboardButton();
                     BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -861,9 +864,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                     BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                     BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                    rowInline1.add(ENG51button);
-                    rowInline2.add(ENG52button);
-                    rowInline3.add(ENG53button);
+                    rowInline1.add(A1A2ENG51button);
+                    rowInline2.add(A1A2ENG52button);
+                    rowInline3.add(A1A2ENG53button);
                     rowInline4.add(BACKLANGbutton);
                     rowInline5.add(BACKLEVELENGbutton);
                     rowsInline.add(rowInline1);
@@ -880,7 +883,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }
                 else
                 {
-                    if (a < b)
+                    if (a < b && a > 0)
                     {
                         String text = "Ваш уровень владения английским языком соответствует уровню А2";
                         EditMessageText message = new EditMessageText();
@@ -892,7 +895,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                         } catch (TelegramApiException e) {
                         }
                     }
-                    if (a > b)
+                    if (a > b && a > 1)
                     {
                         String text = "Ваш уровень владения английским языком соответствует уровню А1";
                         EditMessageText message = new EditMessageText();
@@ -906,7 +909,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     }
                 }
             }
-            if(callbackData.equals("ENG43_BUTTON"))
+            if(callbackData.equals("A1A2ENG43_BUTTON"))
             {
                 if (a == b && a > 1 && b > 1)
                 {
@@ -929,15 +932,15 @@ public class TelegramBot extends TelegramLongPollingBot {
                     List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
 
-                    var ENG51button = new InlineKeyboardButton();
-                    ENG51button.setText("do");
-                    ENG51button.setCallbackData("ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                    var ENG52button = new InlineKeyboardButton();
-                    ENG52button.setText("did"); // правильный ответ
-                    ENG52button.setCallbackData("ENG52_BUTTON");
-                    var ENG53button = new InlineKeyboardButton();
-                    ENG53button.setText("were");
-                    ENG53button.setCallbackData("ENG53_BUTTON");
+                    var A1A2ENG51button = new InlineKeyboardButton();
+                    A1A2ENG51button.setText("do");
+                    A1A2ENG51button.setCallbackData("A1A2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var A1A2ENG52button = new InlineKeyboardButton();
+                    A1A2ENG52button.setText("did"); // правильный ответ
+                    A1A2ENG52button.setCallbackData("A1A2ENG52_BUTTON");
+                    var A1A2ENG53button = new InlineKeyboardButton();
+                    A1A2ENG53button.setText("were");
+                    A1A2ENG53button.setCallbackData("A1A2ENG53_BUTTON");
 
                     var BACKLANGbutton = new InlineKeyboardButton();
                     BACKLANGbutton.setText("Вернуться к выбору языка");
@@ -946,9 +949,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                     BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
                     BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-                    rowInline1.add(ENG51button);
-                    rowInline2.add(ENG52button);
-                    rowInline3.add(ENG53button);
+                    rowInline1.add(A1A2ENG51button);
+                    rowInline2.add(A1A2ENG52button);
+                    rowInline3.add(A1A2ENG53button);
                     rowInline4.add(BACKLANGbutton);
                     rowInline5.add(BACKLEVELENGbutton);
                     rowsInline.add(rowInline1);
@@ -965,7 +968,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }
                 else
                 {
-                    if (a < b)
+                    if (a < b && a > 0)
                     {
                         String text = "Ваш уровень владения английским языком соответствует уровню А2";
                         EditMessageText message = new EditMessageText();
@@ -977,7 +980,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                         } catch (TelegramApiException e) {
                         }
                     }
-                    if (a > b)
+                    if (a > b && a > 1)
                     {
                         String text = "Ваш уровень владения английским языком соответствует уровню А1";
                         EditMessageText message = new EditMessageText();
@@ -991,7 +994,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     }
                 }
             }
-            if(callbackData.equals("ENG51_BUTTON"))
+            if(callbackData.equals("A1A2ENG51_BUTTON"))
             {
                 String text = "Ваш уровень владения английским языком соответствует уровню А1";
                 EditMessageText message = new EditMessageText();
@@ -1005,7 +1008,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 {
                 }
             }
-            if(callbackData.equals("ENG52_BUTTON"))
+            if(callbackData.equals("A1A2ENG52_BUTTON"))
             {
                 String text = "Ваш уровень владения английским языком соответствует уровню А2";
                 EditMessageText message = new EditMessageText();
@@ -1019,7 +1022,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 {
                 }
             }
-            if(callbackData.equals("ENG53_BUTTON"))
+            if(callbackData.equals("A1A2ENG53_BUTTON"))
             {
                 String text = "Ваш уровень владения английским языком соответствует уровню А1";
                 EditMessageText message = new EditMessageText();
@@ -1033,6 +1036,1732 @@ public class TelegramBot extends TelegramLongPollingBot {
                 {
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if(callbackData.equals("B1B2ENG_BUTTON"))
+            {
+                c = 0;
+                d = 0;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. Please let me (...) the book on the table.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var B1B2ENG11button = new InlineKeyboardButton();
+                B1B2ENG11button.setText("put"); // правильный ответ
+                B1B2ENG11button.setCallbackData("B1B2ENG11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG12button = new InlineKeyboardButton();
+                B1B2ENG12button.setText("to put");
+                B1B2ENG12button.setCallbackData("B1B2ENG12_BUTTON");
+                var B1B2ENG13button = new InlineKeyboardButton();
+                B1B2ENG13button.setText("putting");
+                B1B2ENG13button.setCallbackData("B1B2ENG13_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG11button);
+                rowInline2.add(B1B2ENG12button);
+                rowInline3.add(B1B2ENG13button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG11_BUTTON")) {
+                c += 1;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. She is interested (...) learning Spanish and French.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var B1B2ENG21button = new InlineKeyboardButton();
+                B1B2ENG21button.setText("in"); // правильный ответ
+                B1B2ENG21button.setCallbackData("B1B2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG22button = new InlineKeyboardButton();
+                B1B2ENG22button.setText("on");
+                B1B2ENG22button.setCallbackData("B1B2ENG22_BUTTON");
+                var B1B2ENG23button = new InlineKeyboardButton();
+                B1B2ENG23button.setText("at");
+                B1B2ENG23button.setCallbackData("B1B2ENG23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG21button);
+                rowInline2.add(B1B2ENG22button);
+                rowInline3.add(B1B2ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+
+                }
+            }
+            if(callbackData.equals("B1B2ENG12_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. She is interested (...) learning Spanish and French.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var B1B2ENG21button = new InlineKeyboardButton();
+                B1B2ENG21button.setText("in");
+                B1B2ENG21button.setCallbackData("B1B2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG22button = new InlineKeyboardButton();
+                B1B2ENG22button.setText("on");
+                B1B2ENG22button.setCallbackData("B1B2ENG22_BUTTON");
+                var B1B2ENG23button = new InlineKeyboardButton();
+                B1B2ENG23button.setText("at");
+                B1B2ENG23button.setCallbackData("B1B2ENG23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG21button);
+                rowInline2.add(B1B2ENG22button);
+                rowInline3.add(B1B2ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG13_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. She is interested (...) learning Spanish and French.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var B1B2ENG21button = new InlineKeyboardButton();
+                B1B2ENG21button.setText("in");
+                B1B2ENG21button.setCallbackData("B1B2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG22button = new InlineKeyboardButton();
+                B1B2ENG22button.setText("on");
+                B1B2ENG22button.setCallbackData("B1B2ENG22_BUTTON");
+                var B1B2ENG23button = new InlineKeyboardButton();
+                B1B2ENG23button.setText("at");
+                B1B2ENG23button.setCallbackData("B1B2ENG23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG21button);
+                rowInline2.add(B1B2ENG22button);
+                rowInline3.add(B1B2ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG21_BUTTON")) {
+                d += 1;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок.  I am excited (...) my new job next week.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2ENG31button = new InlineKeyboardButton();
+                B1B2ENG31button.setText("start");
+                B1B2ENG31button.setCallbackData("B1B2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG32button = new InlineKeyboardButton();
+                B1B2ENG32button.setText("to start");  // правильный ответ
+                B1B2ENG32button.setCallbackData("B1B2ENG32_BUTTON");
+                var B1B2ENG33button = new InlineKeyboardButton();
+                B1B2ENG33button.setText("started");
+                B1B2ENG33button.setCallbackData("B1B2ENG33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG31button);
+                rowInline2.add(B1B2ENG32button);
+                rowInline3.add(B1B2ENG33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG22_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I am excited (...) my new job next week.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2ENG31button = new InlineKeyboardButton();
+                B1B2ENG31button.setText("start");
+                B1B2ENG31button.setCallbackData("B1B2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG32button = new InlineKeyboardButton();
+                B1B2ENG32button.setText("to start");
+                B1B2ENG32button.setCallbackData("B1B2ENG32_BUTTON");
+                var B1B2ENG33button = new InlineKeyboardButton();
+                B1B2ENG33button.setText("started");
+                B1B2ENG33button.setCallbackData("B1B2ENG33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG31button);
+                rowInline2.add(B1B2ENG32button);
+                rowInline3.add(B1B2ENG33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG23_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I am excited (...) my new job next week.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2ENG31button = new InlineKeyboardButton();
+                B1B2ENG31button.setText("start");
+                B1B2ENG31button.setCallbackData("B1B2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG32button = new InlineKeyboardButton();
+                B1B2ENG32button.setText("to start");
+                B1B2ENG32button.setCallbackData("B1B2ENG32_BUTTON");
+                var B1B2ENG33button = new InlineKeyboardButton();
+                B1B2ENG33button.setText("started");
+                B1B2ENG33button.setCallbackData("B1B2ENG33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG31button);
+                rowInline2.add(B1B2ENG32button);
+                rowInline3.add(B1B2ENG33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG31_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. My brother has been living in Berlin (...) over five years.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2ENG41button = new InlineKeyboardButton();
+                B1B2ENG41button.setText("from");
+                B1B2ENG41button.setCallbackData("B1B2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG42button = new InlineKeyboardButton();
+                B1B2ENG42button.setText("at");
+                B1B2ENG42button.setCallbackData("B1B2ENG42_BUTTON");
+                var B1B2ENG43button = new InlineKeyboardButton();
+                B1B2ENG43button.setText("for"); // правильный ответ
+                B1B2ENG43button.setCallbackData("B1B2ENG43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG41button);
+                rowInline2.add(B1B2ENG42button);
+                rowInline3.add(B1B2ENG43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG32_BUTTON")) {
+                c += 1;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. My brother has been living in Berlin (...) over five years.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2ENG41button = new InlineKeyboardButton();
+                B1B2ENG41button.setText("from");
+                B1B2ENG41button.setCallbackData("B1B2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG42button = new InlineKeyboardButton();
+                B1B2ENG42button.setText("at");
+                B1B2ENG42button.setCallbackData("B1B2ENG42_BUTTON");
+                var B1B2ENG43button = new InlineKeyboardButton();
+                B1B2ENG43button.setText("for");
+                B1B2ENG43button.setCallbackData("B1B2ENG43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG41button);
+                rowInline2.add(B1B2ENG42button);
+                rowInline3.add(B1B2ENG43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG33_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. My brother has been living in Berlin (...) over five years.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2ENG41button = new InlineKeyboardButton();
+                B1B2ENG41button.setText("from");
+                B1B2ENG41button.setCallbackData("B1B2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2ENG42button = new InlineKeyboardButton();
+                B1B2ENG42button.setText("at");
+                B1B2ENG42button.setCallbackData("B1B2ENG42_BUTTON");
+                var B1B2ENG43button = new InlineKeyboardButton();
+                B1B2ENG43button.setText("for");
+                B1B2ENG43button.setCallbackData("B1B2ENG43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2ENG41button);
+                rowInline2.add(B1B2ENG42button);
+                rowInline3.add(B1B2ENG43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("B1B2ENG41_BUTTON"))
+            {
+                if (c == 2 && d == 2)
+                {
+                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. I couldn't go to the party because I (...) my project.";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                    var B1B2ENG51button = new InlineKeyboardButton();
+                    B1B2ENG51button.setText("have finished");
+                    B1B2ENG51button.setCallbackData("B1B2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var B1B2ENG52button = new InlineKeyboardButton();
+                    B1B2ENG52button.setText("must finish");
+                    B1B2ENG52button.setCallbackData("B1B2ENG52_BUTTON");
+                    var B1B2ENG53button = new InlineKeyboardButton();
+                    B1B2ENG53button.setText("had to finish");
+                    B1B2ENG53button.setCallbackData("B1B2ENG53_BUTTON");
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+                    rowInline1.add(B1B2ENG51button);
+                    rowInline2.add(B1B2ENG52button);
+                    rowInline3.add(B1B2ENG53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    try
+                    {
+                        execute(message);
+                    } catch (TelegramApiException e)
+                    {
+                    }
+                }
+
+                if (c < d && c > 0)
+                {
+                    String text = "Ваш уровень владения английским языком соответствует уровню B2";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+                if (c > d && c > 1)
+                {
+                    String text = "Ваш уровень владения английским языком соответствует уровню B1";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+
+            }
+            if(callbackData.equals("B1B2ENG42_BUTTON"))
+            {
+                if (c > 1 && d > 1)
+                {
+                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. I couldn't go to the party because I (...) my project.";
+                    EditMessageText message = new EditMessageText();
+
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                    var B1B2ENG51button = new InlineKeyboardButton();
+                    B1B2ENG51button.setText("have finished");
+                    B1B2ENG51button.setCallbackData("B1B2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var B1B2ENG52button = new InlineKeyboardButton();
+                    B1B2ENG52button.setText("must finish");
+                    B1B2ENG52button.setCallbackData("B1B2ENG52_BUTTON");
+                    var B1B2ENG53button = new InlineKeyboardButton();
+                    B1B2ENG53button.setText("had to finish");// правильный ответ
+                    B1B2ENG53button.setCallbackData("B1B2ENG53_BUTTON");
+
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                    rowInline1.add(B1B2ENG51button);
+                    rowInline2.add(B1B2ENG52button);
+                    rowInline3.add(B1B2ENG53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+                else
+                {
+                    if (c < d && c > 0)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню B2";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                    if (c > d && c > 1)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню B1";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                }
+            }
+            if(callbackData.equals("B1B2ENG43_BUTTON"))
+            {
+                d += 1;
+                if (c > 1 && d > 1)
+                {
+                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. I couldn't go to the party because I (...) my project.";
+                    EditMessageText message = new EditMessageText();
+
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                    var B1B2ENG51button = new InlineKeyboardButton();
+                    B1B2ENG51button.setText("have finished");
+                    B1B2ENG51button.setCallbackData("B1B2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var B1B2ENG52button = new InlineKeyboardButton();
+                    B1B2ENG52button.setText("must finish");
+                    B1B2ENG52button.setCallbackData("B1B2ENG52_BUTTON");
+                    var B1B2ENG53button = new InlineKeyboardButton();
+                    B1B2ENG53button.setText("had to finish");// правильный ответ
+                    B1B2ENG53button.setCallbackData("B1B2ENG53_BUTTON");
+
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                    rowInline1.add(B1B2ENG51button);
+                    rowInline2.add(B1B2ENG52button);
+                    rowInline3.add(B1B2ENG53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+                else
+                {
+                    if (c < d && c > 0)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню B2";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                    if (c > d && c > 1)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню B1";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                }
+            }
+            if(callbackData.equals("B1B2ENG51_BUTTON"))
+            {
+                String text = "Ваш уровень владения английским языком соответствует уровню B1";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+                }
+            }
+            if(callbackData.equals("B1B2ENG52_BUTTON"))
+            {
+                String text = "Ваш уровень владения английским языком соответствует уровню B1";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+                }
+            }
+            if(callbackData.equals("B1B2ENG53_BUTTON"))
+            {
+                String text = "Ваш уровень владения английским языком соответствует уровню B2";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if(callbackData.equals("C1C2ENG_BUTTON"))
+            {
+                i = 0;
+                f = 0;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. She is very good (...) playing the piano.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var C1C2ENG11button = new InlineKeyboardButton();
+                C1C2ENG11button.setText("for");
+                C1C2ENG11button.setCallbackData("C1C2ENG11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG12button = new InlineKeyboardButton();
+                C1C2ENG12button.setText("at");// правильный ответ
+                C1C2ENG12button.setCallbackData("C1C2ENG12_BUTTON");
+                var C1C2ENG13button = new InlineKeyboardButton();
+                C1C2ENG13button.setText("in");
+                C1C2ENG13button.setCallbackData("C1C2ENG13_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG11button);
+                rowInline2.add(C1C2ENG12button);
+                rowInline3.add(C1C2ENG13button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG11_BUTTON")) {
+
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I am not familiar (...) the new system yet.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var C1C2ENG21button = new InlineKeyboardButton();
+                C1C2ENG21button.setText("with"); // правильный ответ
+                C1C2ENG21button.setCallbackData("C1C2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG22button = new InlineKeyboardButton();
+                C1C2ENG22button.setText("by");
+                C1C2ENG22button.setCallbackData("C1C2ENG22_BUTTON");
+                var C1C2ENG23button = new InlineKeyboardButton();
+                C1C2ENG23button.setText("to");
+                C1C2ENG23button.setCallbackData("C1C2ENG23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG21button);
+                rowInline2.add(C1C2ENG22button);
+                rowInline3.add(C1C2ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+
+                }
+            }
+            if(callbackData.equals("C1C2ENG12_BUTTON")) {
+                i += 1;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I am not familiar (...) the new system yet.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var C1C2ENG21button = new InlineKeyboardButton();
+                C1C2ENG21button.setText("with");
+                C1C2ENG21button.setCallbackData("C1C2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG22button = new InlineKeyboardButton();
+                C1C2ENG22button.setText("by");
+                C1C2ENG22button.setCallbackData("C1C2ENG22_BUTTON");
+                var C1C2ENG23button = new InlineKeyboardButton();
+                C1C2ENG23button.setText("to");
+                C1C2ENG23button.setCallbackData("C1C2ENG23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG21button);
+                rowInline2.add(C1C2ENG22button);
+                rowInline3.add(C1C2ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG13_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I am not familiar (...) the new system yet.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var C1C2ENG21button = new InlineKeyboardButton();
+                C1C2ENG21button.setText("with");
+                C1C2ENG21button.setCallbackData("C1C2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG22button = new InlineKeyboardButton();
+                C1C2ENG22button.setText("by");
+                C1C2ENG22button.setCallbackData("C1C2ENG22_BUTTON");
+                var C1C2ENG23button = new InlineKeyboardButton();
+                C1C2ENG23button.setText("to");
+                C1C2ENG23button.setCallbackData("C1C2ENG23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG21button);
+                rowInline2.add(C1C2ENG22button);
+                rowInline3.add(C1C2ENG23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG21_BUTTON")) {
+
+                f += 1;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок.  I can't believe you (...) the concert last night!";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2ENG31button = new InlineKeyboardButton();
+                C1C2ENG31button.setText("missed");// правильный ответ
+                C1C2ENG31button.setCallbackData("C1C2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG32button = new InlineKeyboardButton();
+                C1C2ENG32button.setText("lost");
+                C1C2ENG32button.setCallbackData("C1C2ENG32_BUTTON");
+                var C1C2ENG33button = new InlineKeyboardButton();
+                C1C2ENG33button.setText("skip");
+                C1C2ENG33button.setCallbackData("C1C2ENG33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG31button);
+                rowInline2.add(C1C2ENG32button);
+                rowInline3.add(C1C2ENG33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG22_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I can't believe you (...) the concert last night!";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2ENG31button = new InlineKeyboardButton();
+                C1C2ENG31button.setText("missed");
+                C1C2ENG31button.setCallbackData("C1C2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG32button = new InlineKeyboardButton();
+                C1C2ENG32button.setText("lost");
+                C1C2ENG32button.setCallbackData("C1C2ENG32_BUTTON");
+                var C1C2ENG33button = new InlineKeyboardButton();
+                C1C2ENG33button.setText("skip");
+                C1C2ENG33button.setCallbackData("C1C2ENG33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG31button);
+                rowInline2.add(C1C2ENG32button);
+                rowInline3.add(C1C2ENG33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG23_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I can't believe you (...) the concert last night!";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2ENG31button = new InlineKeyboardButton();
+                C1C2ENG31button.setText("missed");
+                C1C2ENG31button.setCallbackData("C1C2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG32button = new InlineKeyboardButton();
+                C1C2ENG32button.setText("lost");
+                C1C2ENG32button.setCallbackData("C1C2ENG32_BUTTON");
+                var C1C2ENG33button = new InlineKeyboardButton();
+                C1C2ENG33button.setText("skip");
+                C1C2ENG33button.setCallbackData("C1C2ENG33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG31button);
+                rowInline2.add(C1C2ENG32button);
+                rowInline3.add(C1C2ENG33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG31_BUTTON")) {
+                i += 1;
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. It was (...) she received the news that she had won the award.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2ENG41button = new InlineKeyboardButton();
+                C1C2ENG41button.setText("scarcely");
+                C1C2ENG41button.setCallbackData("C1C2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG42button = new InlineKeyboardButton();
+                C1C2ENG42button.setText("hardly");
+                C1C2ENG42button.setCallbackData("C1C2ENG42_BUTTON");
+                var C1C2ENG43button = new InlineKeyboardButton();
+                C1C2ENG43button.setText("just"); // правильный ответ
+                C1C2ENG43button.setCallbackData("C1C2ENG43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG41button);
+                rowInline2.add(C1C2ENG42button);
+                rowInline3.add(C1C2ENG43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG32_BUTTON")) {
+
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. It was (...) she received the news that she had won the award.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2ENG41button = new InlineKeyboardButton();
+                C1C2ENG41button.setText("scarcely");
+                C1C2ENG41button.setCallbackData("C1C2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG42button = new InlineKeyboardButton();
+                C1C2ENG42button.setText("hardly");
+                C1C2ENG42button.setCallbackData("C1C2ENG42_BUTTON");
+                var C1C2ENG43button = new InlineKeyboardButton();
+                C1C2ENG43button.setText("just");
+                C1C2ENG43button.setCallbackData("C1C2ENG43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG41button);
+                rowInline2.add(C1C2ENG42button);
+                rowInline3.add(C1C2ENG43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG33_BUTTON")) {
+                String text = "Выберите вариант ответа, который должен стоять на месте скобок. It was (...) she received the news that she had won the award.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2ENG41button = new InlineKeyboardButton();
+                C1C2ENG41button.setText("scarcely");
+                C1C2ENG41button.setCallbackData("C1C2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2ENG42button = new InlineKeyboardButton();
+                C1C2ENG42button.setText("hardly");
+                C1C2ENG42button.setCallbackData("C1C2ENG42_BUTTON");
+                var C1C2ENG43button = new InlineKeyboardButton();
+                C1C2ENG43button.setText("just");
+                C1C2ENG43button.setCallbackData("C1C2ENG43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2ENG41button);
+                rowInline2.add(C1C2ENG42button);
+                rowInline3.add(C1C2ENG43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                }
+            }
+            if(callbackData.equals("C1C2ENG41_BUTTON"))
+            {
+                if (i == 2 && f == 2)
+                {
+                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. (...) he considered his options, he made the decision to resign.";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                    var C1C2ENG51button = new InlineKeyboardButton();
+                    C1C2ENG51button.setText("Although");
+                    C1C2ENG51button.setCallbackData("C1C2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var C1C2ENG52button = new InlineKeyboardButton();
+                    C1C2ENG52button.setText("Despite");
+                    C1C2ENG52button.setCallbackData("C1C2ENG52_BUTTON");
+                    var C1C2ENG53button = new InlineKeyboardButton();
+                    C1C2ENG53button.setText("Nevertheless");
+                    C1C2ENG53button.setCallbackData("C1C2ENG53_BUTTON");
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+                    rowInline1.add(C1C2ENG51button);
+                    rowInline2.add(C1C2ENG52button);
+                    rowInline3.add(C1C2ENG53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    try
+                    {
+                        execute(message);
+                    } catch (TelegramApiException e)
+                    {
+                    }
+                }
+
+                if (i < f && i > 0)
+                {
+                    String text = "Ваш уровень владения английским языком соответствует уровню C2";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+                if (i > f && i > 1)
+                {
+                    String text = "Ваш уровень владения английским языком соответствует уровню C1";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+
+            }
+            if(callbackData.equals("C1C2ENG42_BUTTON"))
+            {
+                if (i > 1 && f > 1)
+                {
+                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. (...) he considered his options, he made the decision to resign.";
+                    EditMessageText message = new EditMessageText();
+
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                    var C1C2ENG51button = new InlineKeyboardButton();
+                    C1C2ENG51button.setText("Although");
+                    C1C2ENG51button.setCallbackData("C1C2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var C1C2ENG52button = new InlineKeyboardButton();
+                    C1C2ENG52button.setText("Despite");
+                    C1C2ENG52button.setCallbackData("C1C2ENG52_BUTTON");
+                    var C1C2ENG53button = new InlineKeyboardButton();
+                    C1C2ENG53button.setText("Nevertheless");// правильный ответ
+                    C1C2ENG53button.setCallbackData("C1C2ENG53_BUTTON");
+
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                    rowInline1.add(C1C2ENG51button);
+                    rowInline2.add(C1C2ENG52button);
+                    rowInline3.add(C1C2ENG53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+                else
+                {
+                    if (i < f && i > 0)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню C2";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                    if (i > f && i > 1)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню C1";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                }
+            }
+            if(callbackData.equals("C1C2ENG43_BUTTON"))
+            {
+
+                f += 1;
+                if (i > 1 && f > 1)
+                {
+                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. (...) he considered his options, he made the decision to resign.";
+                    EditMessageText message = new EditMessageText();
+
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                    var C1C2ENG51button = new InlineKeyboardButton();
+                    C1C2ENG51button.setText("Although");// правильный ответ
+                    C1C2ENG51button.setCallbackData("C1C2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var C1C2ENG52button = new InlineKeyboardButton();
+                    C1C2ENG52button.setText("Despite");
+                    C1C2ENG52button.setCallbackData("C1C2ENG52_BUTTON");
+                    var C1C2ENG53button = new InlineKeyboardButton();
+                    C1C2ENG53button.setText("Nevertheless");
+                    C1C2ENG53button.setCallbackData("C1C2ENG53_BUTTON");
+
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                    rowInline1.add(C1C2ENG51button);
+                    rowInline2.add(C1C2ENG52button);
+                    rowInline3.add(C1C2ENG53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    try {
+                        execute(message);
+                    } catch (TelegramApiException e) {
+                    }
+                }
+                else
+                {
+                    if (i < f && i > 0)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню C2";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                    if (i > f && i > 1)
+                    {
+                        String text = "Ваш уровень владения английским языком соответствует уровню C1";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        try {
+                            execute(message);
+                        } catch (TelegramApiException e) {
+                        }
+                    }
+                }
+            }
+            if(callbackData.equals("C1C2ENG51_BUTTON"))
+            {
+                String text = "Ваш уровень владения английским языком соответствует уровню C2";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+                }
+            }
+            if(callbackData.equals("C1C2ENG52_BUTTON"))
+            {
+                String text = "Ваш уровень владения английским языком соответствует уровню C1";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+                }
+            }
+            if(callbackData.equals("C1C2ENG53_BUTTON"))
+            {
+                String text = "Ваш уровень владения английским языком соответствует уровню C1";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                try
+                {
+                    execute(message);
+                } catch (TelegramApiException e)
+                {
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             if(callbackData.equals("BACKLANG1_BUTTON"))
             {
                 SendMessage message = new SendMessage();
@@ -1244,7 +2973,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         rowsInline.add(rowInline);
         markupInline.setKeyboard(rowsInline);
         message.setReplyMarkup(markupInline);
-        log.info("Replied to user" + name);
         try
         {
             execute(message);
@@ -1267,5 +2995,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         {
 
         }
+
     }
 }
