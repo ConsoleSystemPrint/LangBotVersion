@@ -67,12 +67,11 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык";
                 EditMessageText message = new EditMessageText();
-
                 message.setChatId(String.valueOf(chatId));
                 message.setText(text);
-                message.setMessageId((int)messageId);
+                message.setMessageId((int) messageId);
                 InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-
+               // messageText("", chatId, messageId);
                 List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
 
                 List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
@@ -1190,6 +1189,1064 @@ public class TelegramBot extends TelegramLongPollingBot
 
 
 
+            if(callbackData.equals("A1A2GER_BUTTON"))
+            {  a1 = 0; b1 = 0;
+                String text = "Vervollständige den Satz: Ich (…) gut.";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int)messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var A1A2GER11button = new InlineKeyboardButton();
+                A1A2GER11button.setText("ist");
+                A1A2GER11button.setCallbackData("A1A2GER11_BUTTON");
+                var A1A2GER12button = new InlineKeyboardButton();
+                A1A2GER12button.setText("bin");
+                A1A2GER12button.setCallbackData("A1A2GER12_BUTTON");
+                var A1A2GER13button = new InlineKeyboardButton();
+                A1A2GER13button.setText("bist");
+                A1A2GER13button.setCallbackData("A1A2GER13_BUTTON");
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(A1A2GER11button);
+                rowInline2.add(A1A2GER12button);
+                rowInline3.add(A1A2GER13button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if(callbackData.equals("A1A2FRE_BUTTON"))
+            {
+                a2 = 0;
+                b2 = 0;
+                String text = "Выберите правильный цвет. \n Quelle est la couleur du ciel?";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var A1A2FRE11button = new InlineKeyboardButton();
+                A1A2FRE11button.setText("bleu");// правильный ответ
+                A1A2FRE11button.setCallbackData("A1A2FRE11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2FRE12button = new InlineKeyboardButton();
+                A1A2FRE12button.setText("rouge");
+                A1A2FRE12button.setCallbackData("A1A2FRE12_BUTTON");
+                var A1A2FRE13button = new InlineKeyboardButton();
+                A1A2FRE13button.setText("jaune");
+                A1A2FRE13button.setCallbackData("A1A2FRE13_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(A1A2FRE11button);
+                rowInline2.add(A1A2FRE12button);
+                rowInline3.add(A1A2FRE13button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("A1A2FRE11_BUTTON") || callbackData.equals("A1A2FRE12_BUTTON") || callbackData.equals("A1A2FRE13_BUTTON"))
+            {
+                if(callbackData.equals("A1A2FRE11_BUTTON"))
+                {
+                    a2 += 1;
+                }
+
+                String text = "Выберите правильную форму будущего времени глагола aller. \n Qu'est-ce que tu vas faire ce weekend?";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var A1A2FRE21button = new InlineKeyboardButton();
+                A1A2FRE21button.setText("Je aller au cinéma");
+                A1A2FRE21button.setCallbackData("A1A2FRE21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2FRE22button = new InlineKeyboardButton();
+                A1A2FRE22button.setText("Je vais au cinéma");// правильный ответ
+                A1A2FRE22button.setCallbackData("A1A2FRE22_BUTTON");
+                var A1A2FRE23button = new InlineKeyboardButton();
+                A1A2FRE23button.setText("Je vais à la cinéma");
+                A1A2FRE23button.setCallbackData("A1A2FRE23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(A1A2FRE21button);
+                rowInline2.add(A1A2FRE22button);
+                rowInline3.add(A1A2FRE23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("A1A2FRE21_BUTTON") || callbackData.equals("A1A2FRE22_BUTTON") || callbackData.equals("A1A2FRE23_BUTTON"))
+            {
+
+                if(callbackData.equals("A1A2FRE22_BUTTON"))
+                {
+                    b2 += 1;
+                }
+                String text = "Выберите правильное местоположение. \n Où est la bibliothèque?";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var A1A2FRE31button = new InlineKeyboardButton();
+                A1A2FRE31button.setText("à gauche");// правильный ответ
+                A1A2FRE31button.setCallbackData("A1A2FRE31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2FRE32button = new InlineKeyboardButton();
+                A1A2FRE32button.setText("à droite");
+                A1A2FRE32button.setCallbackData("A1A2FRE32_BUTTON");
+                var A1A2FRE33button = new InlineKeyboardButton();
+                A1A2FRE33button.setText("derrière");
+                A1A2FRE33button.setCallbackData("A1A2FRE33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(A1A2FRE31button);
+                rowInline2.add(A1A2FRE32button);
+                rowInline3.add(A1A2FRE33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("A1A2FRE31_BUTTON") || callbackData.equals("A1A2FRE32_BUTTON") || callbackData.equals("A1A2FRE33_BUTTON"))
+            {
+                if(callbackData.equals("A1A2FRE31_BUTTON"))
+                {
+                    a2 += 1;
+                }
+                String text = "Выберите правильное описание погоды. \n Quel temps fait-il aujourd'hui?";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var A1A2FRE41button = new InlineKeyboardButton();
+                A1A2FRE41button.setText("Il fait froid");// правильный ответ
+                A1A2FRE41button.setCallbackData("A1A2FRE41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var A1A2FRE42button = new InlineKeyboardButton();
+                A1A2FRE42button.setText("Il faire froid");
+                A1A2FRE42button.setCallbackData("A1A2FRE42_BUTTON");
+                var A1A2FRE43button = new InlineKeyboardButton();
+                A1A2FRE43button.setText("Il fait chaud");
+                A1A2FRE43button.setCallbackData("A1A2FRE43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(A1A2FRE41button);
+                rowInline2.add(A1A2FRE42button);
+                rowInline3.add(A1A2FRE43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("A1A2FRE41_BUTTON") || callbackData.equals("A1A2FRE42_BUTTON") || callbackData.equals("A1A2FRE43_BUTTON"))
+            {
+                if(callbackData.equals("A1A2FRE41_BUTTON"))
+                {
+                    b2 += 1;
+                }
+                if (a2 == b2 && a2 != 0 && b2 != 0)
+                {
+                    String text = "Выберите правильное количество. \n Combien de frères et de sœurs as-tu?";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                    var A1A2FRE51button = new InlineKeyboardButton();
+                    A1A2FRE51button.setText("J'ai trois sœurs");
+                    A1A2FRE51button.setCallbackData("A1A2FRE51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var A1A2FRE52button = new InlineKeyboardButton();
+                    A1A2FRE52button.setText("J'ai six frères");
+                    A1A2FRE52button.setCallbackData("A1A2FRE52_BUTTON");
+                    var A1A2FRE53button = new InlineKeyboardButton();
+                    A1A2FRE53button.setText("J'ai un frère et une sœur");
+                    A1A2FRE53button.setCallbackData("A1A2FRE53_BUTTON");
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+                    rowInline1.add(A1A2FRE51button);
+                    rowInline2.add(A1A2FRE52button);
+                    rowInline3.add(A1A2FRE53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    exe(message);
+                }
+                if (a2 == 0 && b2 == 0)
+                {
+                    String text = "Вы ответили неправильно на все вопросы, рекомендую понизить уровень языка";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    exe(message);
+                }
+                else
+                {
+                    if (a2 < b2)
+                    {
+                        String text = "Ваш уровень владения французским языком соответствует уровню A2";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        exe(message);
+                    }
+                    if (a2 > b2)
+                    {
+                        String text = "Ваш уровень владения французским языком соответствует уровню A1";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        exe(message);
+                    }
+                }
+
+            }
+            if(callbackData.equals("A1A2FRE53_BUTTON"))
+            {
+                String text = "Ваш уровень владения французским языком соответствует уровню A2";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                exe(message);
+            }
+            if(callbackData.equals("A1A2FRE51_BUTTON") || callbackData.equals("A1A2FRE52_BUTTON"))
+            {
+                String text = "Ваш уровень владения французским языком соответствует уровню A1";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                exe(message);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if(callbackData.equals("B1B2FRE_BUTTON"))
+            {
+                c2 = 0;
+                d2 = 0;
+                String text = "Выберите правильное слово для заполнения пропуска. \n Utilisez le mot correctement dans la phrase : Je suis allé au cinéma (...) regarder un film";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var B1B2FRE11button = new InlineKeyboardButton();
+                B1B2FRE11button.setText("pour");// правильный ответ
+                B1B2FRE11button.setCallbackData("B1B2FRE11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2FRE12button = new InlineKeyboardButton();
+                B1B2FRE12button.setText("à");
+                B1B2FRE12button.setCallbackData("B1B2FRE12_BUTTON");
+                var B1B2FRE13button = new InlineKeyboardButton();
+                B1B2FRE13button.setText("pour");
+                B1B2FRE13button.setCallbackData("B1B2FRE13_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2FRE11button);
+                rowInline2.add(B1B2FRE12button);
+                rowInline3.add(B1B2FRE13button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("B1B2FRE11_BUTTON") || callbackData.equals("B1B2FRE12_BUTTON") || callbackData.equals("B1B2FRE13_BUTTON"))
+            {
+                if(callbackData.equals("B1B2FRE11_BUTTON"))
+                {
+                    c2 += 1;
+                }
+
+                String text = "Выберите правильное предлог для завершения фразы. \n Elle est arrivée  Paris il y a deux semaines";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var B1B2FRE21button = new InlineKeyboardButton();
+                B1B2FRE21button.setText("à");// правильный ответ
+                B1B2FRE21button.setCallbackData("B1B2FRE21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2FRE22button = new InlineKeyboardButton();
+                B1B2FRE22button.setText("de");
+                B1B2FRE22button.setCallbackData("B1B2FRE22_BUTTON");
+                var B1B2FRE23button = new InlineKeyboardButton();
+                B1B2FRE23button.setText("dans");
+                B1B2FRE23button.setCallbackData("B1B2FRE23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2FRE21button);
+                rowInline2.add(B1B2FRE22button);
+                rowInline3.add(B1B2FRE23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("B1B2FRE21_BUTTON") || callbackData.equals("B1B2FRE22_BUTTON") || callbackData.equals("B1B2FRE23_BUTTON"))
+            {
+
+                if(callbackData.equals("B1B2FRE21_BUTTON"))
+                {
+                    d2 += 1;
+                }
+                String text = "Согласуйте глагол partir в будущем времени для нous.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2FRE31button = new InlineKeyboardButton();
+                B1B2FRE31button.setText("partira");
+                B1B2FRE31button.setCallbackData("B1B2FRE31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2FRE32button = new InlineKeyboardButton();
+                B1B2FRE32button.setText("partirez");
+                B1B2FRE32button.setCallbackData("B1B2FRE32_BUTTON");
+                var B1B2FRE33button = new InlineKeyboardButton();
+                B1B2FRE33button.setText("partirons");// правильный ответ
+                B1B2FRE33button.setCallbackData("B1B2FRE33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2FRE31button);
+                rowInline2.add(B1B2FRE32button);
+                rowInline3.add(B1B2FRE33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("B1B2FRE31_BUTTON") || callbackData.equals("B1B2FRE32_BUTTON") || callbackData.equals("B1B2FRE33_BUTTON"))
+            {
+                if(callbackData.equals("B1B2FRE33_BUTTON"))
+                {
+                    c2 += 1;
+                }
+                String text = "Найдите женский род к слову grand.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var B1B2FRE41button = new InlineKeyboardButton();
+                B1B2FRE41button.setText("grandeur");
+                B1B2FRE41button.setCallbackData("B1B2FRE41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var B1B2FRE42button = new InlineKeyboardButton();
+                B1B2FRE42button.setText("grande");// правильный ответ
+                B1B2FRE42button.setCallbackData("B1B2FRE42_BUTTON");
+                var B1B2FRE43button = new InlineKeyboardButton();
+                B1B2FRE43button.setText("grandement");
+                B1B2FRE43button.setCallbackData("B1B2FRE43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(B1B2FRE41button);
+                rowInline2.add(B1B2FRE42button);
+                rowInline3.add(B1B2FRE43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("B1B2FRE41_BUTTON") || callbackData.equals("B1B2FRE42_BUTTON") || callbackData.equals("B1B2FRE43_BUTTON"))
+            {
+                if(callbackData.equals("B1B2FRE42_BUTTON"))
+                {
+                    d2 += 1;
+                }
+                if (c2 == d2 && c2 != 0 && d2 != 0)
+                {
+                    String text = "Выберите правильную форму настоящего сослагательного наклонения глагола être для множественного числа.";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                    var B1B2FRE51button = new InlineKeyboardButton();
+                    B1B2FRE51button.setText("soyons");
+                    B1B2FRE51button.setCallbackData("B1B2FRE51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var B1B2FRE52button = new InlineKeyboardButton();
+                    B1B2FRE52button.setText("sommes");
+                    B1B2FRE52button.setCallbackData("B1B2FRE52_BUTTON");
+                    var B1B2FRE53button = new InlineKeyboardButton();
+                    B1B2FRE53button.setText("soient");
+                    B1B2FRE53button.setCallbackData("B1B2FRE53_BUTTON");
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+                    rowInline1.add(B1B2FRE51button);
+                    rowInline2.add(B1B2FRE52button);
+                    rowInline3.add(B1B2FRE53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    exe(message);
+                }
+                if (c2 == 0 && d2 == 0)
+                {
+                    String text = "Вы ответили неправильно на все вопросы, рекомендую понизить уровень языка";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    exe(message);
+                }
+                else
+                {
+                    if (c2 < d2)
+                    {
+                        String text = "Ваш уровень владения французским языком соответствует уровню B2";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        exe(message);
+                    }
+                    if (c2 > d2)
+                    {
+                        String text = "Ваш уровень владения французским языком соответствует уровню B1";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        exe(message);
+                    }
+                }
+
+            }
+            if(callbackData.equals("B1B2FRE51_BUTTON"))
+            {
+                String text = "Ваш уровень владения французским языком соответствует уровню B2";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                exe(message);
+            }
+            if(callbackData.equals("B1B2FRE52_BUTTON") || callbackData.equals("B1B2FRE53_BUTTON"))
+            {
+                String text = "Ваш уровень владения французским языком соответствует уровню B1";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                exe(message);
+            }
+
+
+
+
+
+
+
+
+
+            if(callbackData.equals("C1C2FRE_BUTTON"))
+            {
+                i2 = 0;
+                f2 = 0;
+                String text = "Какое слово использовать в этом предложении: \n l est important de (...) attention à ce que tu dis.";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var C1C2FRE11button = new InlineKeyboardButton();
+                C1C2FRE11button.setText("faire");// правильный ответ
+                C1C2FRE11button.setCallbackData("C1C2FRE11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2FRE12button = new InlineKeyboardButton();
+                C1C2FRE12button.setText("mettre");
+                C1C2FRE12button.setCallbackData("C1C2FRE12_BUTTON");
+                var C1C2FRE13button = new InlineKeyboardButton();
+                C1C2FRE13button.setText("porter");
+                C1C2FRE13button.setCallbackData("C1C2FRE13_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2FRE11button);
+                rowInline2.add(C1C2FRE12button);
+                rowInline3.add(C1C2FRE13button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("C1C2FRE11_BUTTON") || callbackData.equals("C1C2FRE12_BUTTON") || callbackData.equals("C1C2FRE13_BUTTON"))
+            {
+                if(callbackData.equals("C1C2FRE11_BUTTON"))
+                {
+                    i2 += 1;
+                }
+
+                String text = "Какой из представленных времен употребляется для описания действия, которое происходило до другого прошедшего момента времени?";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                var C1C2FRE21button = new InlineKeyboardButton();
+                C1C2FRE21button.setText("Le passé composé");
+                C1C2FRE21button.setCallbackData("C1C2FRE21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2FRE22button = new InlineKeyboardButton();
+                C1C2FRE22button.setText("L'imparfait");// правильный ответ
+                C1C2FRE22button.setCallbackData("C1C2FRE22_BUTTON");
+                var C1C2FRE23button = new InlineKeyboardButton();
+                C1C2FRE23button.setText("Le plus-que-parfait");
+                C1C2FRE23button.setCallbackData("C1C2FRE23_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2FRE21button);
+                rowInline2.add(C1C2FRE22button);
+                rowInline3.add(C1C2FRE23button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("C1C2FRE21_BUTTON") || callbackData.equals("C1C2FRE22_BUTTON") || callbackData.equals("C1C2FRE23_BUTTON"))
+            {
+
+                if(callbackData.equals("C1C2FRE23_BUTTON"))
+                {
+                    f2 += 1;
+                }
+                String text = "Какое слово подходит в этом контексте: \n Je (...) eu l'occasion de visiter Paris plusieurs fois.";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2FRE31button = new InlineKeyboardButton();
+                C1C2FRE31button.setText("suis");
+                C1C2FRE31button.setCallbackData("C1C2FRE31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2FRE32button = new InlineKeyboardButton();
+                C1C2FRE32button.setText("ai");// правильный ответ
+                C1C2FRE32button.setCallbackData("C1C2FRE32_BUTTON");
+                var C1C2FRE33button = new InlineKeyboardButton();
+                C1C2FRE33button.setText("avais");
+                C1C2FRE33button.setCallbackData("C1C2FRE33_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2FRE31button);
+                rowInline2.add(C1C2FRE32button);
+                rowInline3.add(C1C2FRE33button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("C1C2FRE31_BUTTON") || callbackData.equals("C1C2FRE32_BUTTON") || callbackData.equals("C1C2FRE33_BUTTON"))
+            {
+                if(callbackData.equals("C1C2FRE32_BUTTON"))
+                {
+                    i2 += 1;
+                }
+                String text = "Какое выражение используется для описания события, которое могло произойти, но не случилось?";
+                EditMessageText message = new EditMessageText();
+
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+
+                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+
+
+                var C1C2FRE41button = new InlineKeyboardButton();
+                C1C2FRE41button.setText("Si j'avais su");// правильный ответ
+                C1C2FRE41button.setCallbackData("C1C2FRE41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                var C1C2FRE42button = new InlineKeyboardButton();
+                C1C2FRE42button.setText("Si je savais");
+                C1C2FRE42button.setCallbackData("C1C2FRE42_BUTTON");
+                var C1C2FRE43button = new InlineKeyboardButton();
+                C1C2FRE43button.setText("Si j'ai su");
+                C1C2FRE43button.setCallbackData("C1C2FRE43_BUTTON");
+
+                var BACKLANGbutton = new InlineKeyboardButton();
+                BACKLANGbutton.setText("Вернуться к выбору языка");
+                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                var BACKLEVELENGbutton = new InlineKeyboardButton();
+                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+
+                rowInline1.add(C1C2FRE41button);
+                rowInline2.add(C1C2FRE42button);
+                rowInline3.add(C1C2FRE43button);
+                rowInline4.add(BACKLANGbutton);
+                rowInline5.add(BACKLEVELENGbutton);
+                rowsInline.add(rowInline1);
+                rowsInline.add(rowInline2);
+                rowsInline.add(rowInline3);
+                rowsInline.add(rowInline4);
+                rowsInline.add(rowInline5);
+                markupInline.setKeyboard(rowsInline);
+                message.setReplyMarkup(markupInline);
+                exe(message);
+            }
+            if(callbackData.equals("C1C2FRE41_BUTTON") || callbackData.equals("C1C2FRE42_BUTTON") || callbackData.equals("C1C2FRE43_BUTTON"))
+            {
+                if(callbackData.equals("C1C2FRE41_BUTTON"))
+                {
+                    f2 += 1;
+                }
+                if (i2 == f2 && i2 != 0 && f2 != 0)
+                {
+                    String text = "Какой из следующих видов сослагательного наклонения правильно описывает предположение или желание в настоящем времени?";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
+                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+                    var C1C2FRE51button = new InlineKeyboardButton();
+                    C1C2FRE51button.setText("Le subjonctif imparfait");
+                    C1C2FRE51button.setCallbackData("C1C2FRE51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
+                    var C1C2FRE52button = new InlineKeyboardButton();
+                    C1C2FRE52button.setText("Le subjonctif présent");
+                    C1C2FRE52button.setCallbackData("C1C2FRE52_BUTTON");
+                    var C1C2FRE53button = new InlineKeyboardButton();
+                    C1C2FRE53button.setText("Le subjonctif passé");
+                    C1C2FRE53button.setCallbackData("C1C2FRE53_BUTTON");
+                    var BACKLANGbutton = new InlineKeyboardButton();
+                    BACKLANGbutton.setText("Вернуться к выбору языка");
+                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+                    var BACKLEVELENGbutton = new InlineKeyboardButton();
+                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+                    rowInline1.add(C1C2FRE51button);
+                    rowInline2.add(C1C2FRE52button);
+                    rowInline3.add(C1C2FRE53button);
+                    rowInline4.add(BACKLANGbutton);
+                    rowInline5.add(BACKLEVELENGbutton);
+                    rowsInline.add(rowInline1);
+                    rowsInline.add(rowInline2);
+                    rowsInline.add(rowInline3);
+                    rowsInline.add(rowInline4);
+                    rowsInline.add(rowInline5);
+                    markupInline.setKeyboard(rowsInline);
+                    message.setReplyMarkup(markupInline);
+                    exe(message);
+                }
+                if (i2 == 0 && f2 == 0)
+                {
+                    String text = "Вы ответили неправильно на все вопросы, рекомендую понизить уровень языка";
+                    EditMessageText message = new EditMessageText();
+                    message.setChatId(String.valueOf(chatId));
+                    message.setText(text);
+                    message.setMessageId((int) messageId);
+                    exe(message);
+                }
+                else
+                {
+                    if (i2 < f2)
+                    {
+                        String text = "Ваш уровень владения французским языком соответствует уровню С2";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        exe(message);
+                    }
+                    if (i2 > f2)
+                    {
+                        String text = "Ваш уровень владения французским языком соответствует уровню С1";
+                        EditMessageText message = new EditMessageText();
+                        message.setChatId(String.valueOf(chatId));
+                        message.setText(text);
+                        message.setMessageId((int) messageId);
+                        exe(message);
+                    }
+                }
+
+            }
+            if(callbackData.equals("C1C2FRE52_BUTTON"))
+            {
+                String text = "Ваш уровень владения французским языком соответствует уровню С2";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                exe(message);
+            }
+            if(callbackData.equals("C1C2FRE51_BUTTON") || callbackData.equals("C1C2FRE53_BUTTON"))
+            {
+                String text = "Ваш уровень владения французским языком соответствует уровню С1";
+                EditMessageText message = new EditMessageText();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(text);
+                message.setMessageId((int) messageId);
+                exe(message);
+            }
+
+
+
+
+
 
 
 
@@ -1271,13 +2328,7 @@ public class TelegramBot extends TelegramLongPollingBot
                 rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
-                try
-                {
-                    execute(message);
-                }
-                catch (TelegramApiException e)
-                {
-                }
+                exe(message);
             }
             if(callbackData.equals("BACKLEVELGER_BUTTON"))
             {
@@ -1312,13 +2363,7 @@ public class TelegramBot extends TelegramLongPollingBot
                 rowsInline.add(rowInline3);
                 markupInline.setKeyboard(rowsInline);
                 message.setReplyMarkup(markupInline);
-                try
-                {
-                    execute(message);
-                }
-                catch (TelegramApiException e)
-                {
-                }
+                exe(message);
             }
             if(callbackData.equals("BACKLEVELFRE_BUTTON"))
             {
@@ -1357,7 +2402,7 @@ public class TelegramBot extends TelegramLongPollingBot
             }
         }
     }
-    private void exe(EditMessageText message)
+    public void exe(EditMessageText message)
     {
         try
         {
@@ -1367,6 +2412,14 @@ public class TelegramBot extends TelegramLongPollingBot
         {
         }
     }
+    public void messageText(String text, long chatId, long messageId)
+    {
+        EditMessageText message = new EditMessageText();
+        message.setChatId(String.valueOf(chatId));
+        message.setText(text);
+        message.setMessageId((int) messageId);
+    }
+
     private void startCommandReceived(long chatId, String name)
     {
         SendMessage message = new SendMessage();
