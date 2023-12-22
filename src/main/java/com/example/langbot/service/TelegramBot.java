@@ -54,114 +54,30 @@ public class TelegramBot extends TelegramLongPollingBot
             long chatId = update.getCallbackQuery().getMessage().getChatId();
             if(callbackData.equals("ENG_BUTTON"))
             {
-                String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-
-                var A1A2ENGbutton = new InlineKeyboardButton();
-                A1A2ENGbutton.setText("Минимальный");
-                A1A2ENGbutton.setCallbackData("A1A2ENG_BUTTON");
-                var B1B2ENGbutton = new InlineKeyboardButton();
-                B1B2ENGbutton.setText("Средний");
-                B1B2ENGbutton.setCallbackData("B1B2ENG_BUTTON");
-                var C1C2ENGbutton = new InlineKeyboardButton();
-                C1C2ENGbutton.setText("Максимальный");
-                C1C2ENGbutton.setCallbackData("C1C2ENG_BUTTON");
-                rowInline1.add(A1A2ENGbutton);
-                rowInline2.add(B1B2ENGbutton);
-                rowInline3.add(C1C2ENGbutton);
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык",
+                        "Минимальный", "A1A2ENG_BUTTON", "Средний", "B1B2ENG_BUTTON",
+                        "Максимальный", "C1C2ENG_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("GER_BUTTON"))
             {
-                String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-
-                var A1A2GERbutton = new InlineKeyboardButton();
-                A1A2GERbutton.setText("Минимальный");
-                A1A2GERbutton.setCallbackData("A1A2GER_BUTTON");
-                var B1B2GERbutton = new InlineKeyboardButton();
-                B1B2GERbutton.setText("Средний");
-                B1B2GERbutton.setCallbackData("B1B2GER_BUTTON");
-                var C1C2GERbutton = new InlineKeyboardButton();
-                C1C2GERbutton.setText("Максимальный");
-                C1C2GERbutton.setCallbackData("C1C2GER_BUTTON");
-                rowInline1.add(A1A2GERbutton);
-                rowInline2.add(B1B2GERbutton);
-                rowInline3.add(C1C2GERbutton);
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык",
+                        "Минимальный", "A1A2GER_BUTTON", "Средний", "B1B2GER_BUTTON",
+                        "Максимальный", "C1C2GER_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("FRE_BUTTON"))
             {
-
-                String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь французский язык";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-
-                var A1A2FREbutton = new InlineKeyboardButton();
-                A1A2FREbutton.setText("Минимальный");
-                A1A2FREbutton.setCallbackData("A1A2FRE_BUTTON");
-                var B1B2FREbutton = new InlineKeyboardButton();
-                B1B2FREbutton.setText("Средний");
-                B1B2FREbutton.setCallbackData("B1B2FRE_BUTTON");
-                var C1C2FREbutton = new InlineKeyboardButton();
-                C1C2FREbutton.setText("Максимальный");
-                C1C2FREbutton.setCallbackData("C1C2FRE_BUTTON");
-                rowInline1.add(A1A2FREbutton);
-                rowInline2.add(B1B2FREbutton);
-                rowInline3.add(C1C2FREbutton);
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь французский язык",
+                        "Минимальный", "A1A2FRE_BUTTON", "Средний", "B1B2FRE_BUTTON",
+                        "Максимальный", "C1C2FRE_BUTTON", chatId, messageId);
             }
 
             if(callbackData.equals("A1A2ENG_BUTTON"))
             {
-               // A1A21 eng = new A1A21();
-               // eng.A1A2ENG1();
-               A1A2ENG1(chatId, messageId);
-                //exe(message);
+                a = 0;
+                b = 0;
+                Lang("Выберите правильный ответ в этом диалоге. \n Hello! I’m Susanna. What’s your name?",
+                        "I do Anna", "A1A2ENG11_BUTTON", "My name Anna", "A1A2ENG12_BUTTON",
+                        "My name is Anna", "A1A2ENG13_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2ENG11_BUTTON") || callbackData.equals("A1A2ENG12_BUTTON") || callbackData.equals("A1A2ENG13_BUTTON"))
             {
@@ -169,44 +85,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. My sister's friend is (...) trained teacher.";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline1 = new ArrayList<>(); List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline3 = new ArrayList<>(); List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
-
-                List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-                var A1A2ENG21button = new InlineKeyboardButton();
-                A1A2ENG21button.setText("the");
-                A1A2ENG21button.setCallbackData("A1A2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var A1A2ENG22button = new InlineKeyboardButton();
-                A1A2ENG22button.setText("a");
-                A1A2ENG22button.setCallbackData("A1A2ENG22_BUTTON"); // правильный ответ
-                var A1A2ENG23button = new InlineKeyboardButton();
-                A1A2ENG23button.setText("an");
-                A1A2ENG23button.setCallbackData("A1A2ENG23_BUTTON");
-
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2ENG21button); rowInline2.add(A1A2ENG22button);
-                rowInline3.add(A1A2ENG23button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My sister's friend is (...) trained teacher.",
+                        "the", "A1A2ENG21_BUTTON", "a", "A1A2ENG22_BUTTON",
+                        "an", "A1A2ENG23_BUTTON", chatId, messageId);
             }
 
             if(callbackData.equals("A1A2ENG21_BUTTON") || callbackData.equals("A1A2ENG22_BUTTON") || callbackData.equals("A1A2ENG23_BUTTON"))
@@ -215,41 +96,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     b += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. My parents are rich. That’s (...) new house.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2ENG31button = new InlineKeyboardButton();
-                A1A2ENG31button.setText("our"); // правильный ответ
-                A1A2ENG31button.setCallbackData("A1A2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var A1A2ENG32button = new InlineKeyboardButton();
-                A1A2ENG32button.setText("mine");
-                A1A2ENG32button.setCallbackData("A1A2ENG32_BUTTON");
-                var A1A2ENG33button = new InlineKeyboardButton();
-                A1A2ENG33button.setText("theirs");
-                A1A2ENG33button.setCallbackData("A1A2ENG33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2ENG31button); rowInline2.add(A1A2ENG32button);
-                rowInline3.add(A1A2ENG33button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My parents are rich. That’s (...) new house.",
+                        "our", "A1A2ENG31_BUTTON", "mine", "A1A2ENG32_BUTTON",
+                        "theirs", "A1A2ENG33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2ENG31_BUTTON") || callbackData.equals("A1A2ENG32_BUTTON") || callbackData.equals("A1A2ENG33_BUTTON"))
             {
@@ -257,42 +106,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. This is the university (...) i studied economics.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2ENG41button = new InlineKeyboardButton();
-                A1A2ENG41button.setText("when");
-                A1A2ENG41button.setCallbackData("A1A2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var A1A2ENG42button = new InlineKeyboardButton();
-                A1A2ENG42button.setText("where"); // правильный ответ
-                A1A2ENG42button.setCallbackData("A1A2ENG42_BUTTON");
-                var A1A2ENG43button = new InlineKeyboardButton();
-                A1A2ENG43button.setText("who");
-                A1A2ENG43button.setCallbackData("A1A2ENG43_BUTTON");
-
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2ENG41button); rowInline2.add(A1A2ENG42button);
-                rowInline3.add(A1A2ENG43button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n This is the university (...) i studied economics.",
+                        "when", "A1A2ENG41_BUTTON", "where", "A1A2ENG42_BUTTON",
+                        "who", "A1A2ENG43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2ENG41_BUTTON") || callbackData.equals("A1A2ENG42_BUTTON") || callbackData.equals("A1A2ENG43_BUTTON"))
             {
@@ -302,42 +118,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (a == b && a != 0 && b != 0)
                 {
-                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. Where (...) you go on holiday last year?";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline1 = new ArrayList<>(); List<InlineKeyboardButton> rowInline2 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline3 = new ArrayList<>(); List<InlineKeyboardButton> rowInline4 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var A1A2ENG51button = new InlineKeyboardButton();
-                    A1A2ENG51button.setText("do");
-                    A1A2ENG51button.setCallbackData("A1A2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                    var A1A2ENG52button = new InlineKeyboardButton();
-                    A1A2ENG52button.setText("did"); // правильный ответ
-                    A1A2ENG52button.setCallbackData("A1A2ENG52_BUTTON");
-                    var A1A2ENG53button = new InlineKeyboardButton();
-                    A1A2ENG53button.setText("were");
-                    A1A2ENG53button.setCallbackData("A1A2ENG53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(A1A2ENG51button); rowInline2.add(A1A2ENG52button);
-                    rowInline3.add(A1A2ENG53button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                    rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Where (...) you go on holiday last year?",
+                            "do", "A1A2ENG51_BUTTON", "did", "A1A2ENG52_BUTTON",
+                            "were", "A1A2ENG53_BUTTON", chatId, messageId);
                 }
                 if (a == 0 && b == 0)
                 {
@@ -369,40 +152,9 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 c = 0;
                 d = 0;
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. Please let me (...) the book on the table.";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-                var B1B2ENG11button = new InlineKeyboardButton();
-                B1B2ENG11button.setText("put"); // правильный ответ
-                B1B2ENG11button.setCallbackData("B1B2ENG11_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var B1B2ENG12button = new InlineKeyboardButton();
-                B1B2ENG12button.setText("to put");
-                B1B2ENG12button.setCallbackData("B1B2ENG12_BUTTON");
-                var B1B2ENG13button = new InlineKeyboardButton();
-                B1B2ENG13button.setText("putting");
-                B1B2ENG13button.setCallbackData("B1B2ENG13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2ENG11button); rowInline2.add(B1B2ENG12button);
-                rowInline3.add(B1B2ENG13button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-                markupInline.setKeyboard(rowsInline);
-
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Please let me (...) the book on the table.",
+                        "put", "B1B2ENG11_BUTTON", "to put", "B1B2ENG12_BUTTON",
+                        "putting", "B1B2ENG13_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2ENG11_BUTTON") || callbackData.equals("B1B2ENG12_BUTTON") || callbackData.equals("B1B2ENG13_BUTTON"))
             {
@@ -410,42 +162,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. She is interested (...) learning Spanish and French.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var B1B2ENG21button = new InlineKeyboardButton();
-                B1B2ENG21button.setText("in"); // правильный ответ
-                B1B2ENG21button.setCallbackData("B1B2ENG21_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var B1B2ENG22button = new InlineKeyboardButton();
-                B1B2ENG22button.setText("on");
-                B1B2ENG22button.setCallbackData("B1B2ENG22_BUTTON");
-                var B1B2ENG23button = new InlineKeyboardButton();
-                B1B2ENG23button.setText("at");
-                B1B2ENG23button.setCallbackData("B1B2ENG23_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2ENG21button); rowInline2.add(B1B2ENG22button);
-                rowInline3.add(B1B2ENG23button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n She is interested (...) learning Spanish and French.",
+                        "in", "B1B2ENG21_BUTTON", "on", "B1B2ENG22_BUTTON",
+                        "at", "B1B2ENG23_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2ENG21_BUTTON") || callbackData.equals("B1B2ENG22_BUTTON") || callbackData.equals("B1B2ENG23_BUTTON"))
             {
@@ -453,42 +172,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     d += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок.  I am excited (...) my new job next week.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var B1B2ENG31button = new InlineKeyboardButton();
-                B1B2ENG31button.setText("start");
-                B1B2ENG31button.setCallbackData("B1B2ENG31_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var B1B2ENG32button = new InlineKeyboardButton();
-                B1B2ENG32button.setText("to start");  // правильный ответ
-                B1B2ENG32button.setCallbackData("B1B2ENG32_BUTTON");
-                var B1B2ENG33button = new InlineKeyboardButton();
-                B1B2ENG33button.setText("started");
-                B1B2ENG33button.setCallbackData("B1B2ENG33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2ENG31button); rowInline2.add(B1B2ENG32button);
-                rowInline3.add(B1B2ENG33button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I am excited (...) my new job next week.",
+                        "start", "B1B2ENG31_BUTTON", "to start", "B1B2ENG32_BUTTON",
+                        "started", "B1B2ENG33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2ENG31_BUTTON") || callbackData.equals("B1B2ENG32_BUTTON") || callbackData.equals("B1B2ENG33_BUTTON"))
             {
@@ -496,43 +182,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. My brother has been living in Berlin (...) over five years.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var B1B2ENG41button = new InlineKeyboardButton();
-                B1B2ENG41button.setText("from");
-                B1B2ENG41button.setCallbackData("B1B2ENG41_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                var B1B2ENG42button = new InlineKeyboardButton();
-                B1B2ENG42button.setText("at");
-                B1B2ENG42button.setCallbackData("B1B2ENG42_BUTTON");
-                var B1B2ENG43button = new InlineKeyboardButton();
-                B1B2ENG43button.setText("for"); // правильный ответ
-                B1B2ENG43button.setCallbackData("B1B2ENG43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2ENG41button); rowInline2.add(B1B2ENG42button);
-                rowInline3.add(B1B2ENG43button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My brother has been living in Berlin (...) over five years.",
+                        "from", "B1B2ENG41_BUTTON", "at", "B1B2ENG42_BUTTON",
+                        "for", "B1B2ENG43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2ENG41_BUTTON") || callbackData.equals("B1B2ENG42_BUTTON") || callbackData.equals("B1B2ENG43_BUTTON"))
             {
@@ -542,42 +194,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (c == d && c != 0 && d != 0)
                 {
-                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. I couldn't go to the party because I (...) my project.";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var B1B2ENG51button = new InlineKeyboardButton();
-                    B1B2ENG51button.setText("have finished");
-                    B1B2ENG51button.setCallbackData("B1B2ENG51_BUTTON"); // Английский язык первая цифра - первое слово, вторая цифра первый вариант перевода
-                    var B1B2ENG52button = new InlineKeyboardButton();
-                    B1B2ENG52button.setText("must finish");
-                    B1B2ENG52button.setCallbackData("B1B2ENG52_BUTTON");
-                    var B1B2ENG53button = new InlineKeyboardButton();
-                    B1B2ENG53button.setText("had to finish");
-                    B1B2ENG53button.setCallbackData("B1B2ENG53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(B1B2ENG51button); rowInline2.add(B1B2ENG52button);
-                    rowInline3.add(B1B2ENG53button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                    rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I couldn't go to the party because I (...) my project.",
+                            "have finished", "B1B2ENG51_BUTTON", "must finish", "B1B2ENG52_BUTTON",
+                            "had to finish", "B1B2ENG53_BUTTON", chatId, messageId);
                 }
                 if (c == 0 && d == 0)
                 {
@@ -606,48 +225,13 @@ public class TelegramBot extends TelegramLongPollingBot
             }
 
 
-
             if(callbackData.equals("C1C2ENG_BUTTON"))
             {
                 i = 0;
                 f = 0;
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. She is very good (...) playing the piano.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2ENG11button = new InlineKeyboardButton();
-                C1C2ENG11button.setText("for");
-                C1C2ENG11button.setCallbackData("C1C2ENG11_BUTTON");
-                var C1C2ENG12button = new InlineKeyboardButton();
-                C1C2ENG12button.setText("at");// правильный ответ
-                C1C2ENG12button.setCallbackData("C1C2ENG12_BUTTON");
-                var C1C2ENG13button = new InlineKeyboardButton();
-                C1C2ENG13button.setText("in");
-                C1C2ENG13button.setCallbackData("C1C2ENG13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2ENG11button); rowInline2.add(C1C2ENG12button);
-                rowInline3.add(C1C2ENG13button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n She is very good (...) playing the piano.",
+                        "for", "C1C2ENG11_BUTTON", "at", "C1C2ENG12_BUTTON",
+                        "in", "C1C2ENG13_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2ENG11_BUTTON") || callbackData.equals("C1C2ENG12_BUTTON") || callbackData.equals("C1C2ENG13_BUTTON"))
             {
@@ -655,43 +239,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. I am not familiar (...) the new system yet.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2ENG21button = new InlineKeyboardButton();
-                C1C2ENG21button.setText("with"); // правильный ответ
-                C1C2ENG21button.setCallbackData("C1C2ENG21_BUTTON");
-                var C1C2ENG22button = new InlineKeyboardButton();
-                C1C2ENG22button.setText("by");
-                C1C2ENG22button.setCallbackData("C1C2ENG22_BUTTON");
-                var C1C2ENG23button = new InlineKeyboardButton();
-                C1C2ENG23button.setText("to");
-                C1C2ENG23button.setCallbackData("C1C2ENG23_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2ENG21button); rowInline2.add(C1C2ENG22button);
-                rowInline3.add(C1C2ENG23button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I am not familiar (...) the new system yet.",
+                        "with", "C1C2ENG21_BUTTON", "by", "C1C2ENG22_BUTTON",
+                        "to", "C1C2ENG23_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2ENG21_BUTTON") || callbackData.equals("C1C2ENG22_BUTTON") || callbackData.equals("C1C2ENG23_BUTTON"))
             {
@@ -700,44 +250,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     f += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок.  I can't believe you (...) the concert last night!";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-
-                var C1C2ENG31button = new InlineKeyboardButton();
-                C1C2ENG31button.setText("missed");// правильный ответ
-                C1C2ENG31button.setCallbackData("C1C2ENG31_BUTTON");
-                var C1C2ENG32button = new InlineKeyboardButton();
-                C1C2ENG32button.setText("lost");
-                C1C2ENG32button.setCallbackData("C1C2ENG32_BUTTON");
-                var C1C2ENG33button = new InlineKeyboardButton();
-                C1C2ENG33button.setText("skip");
-                C1C2ENG33button.setCallbackData("C1C2ENG33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2ENG31button); rowInline2.add(C1C2ENG32button);
-                rowInline3.add(C1C2ENG33button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I can't believe you (...) the concert last night!",
+                        "missed", "C1C2ENG31_BUTTON", "lost", "C1C2ENG32_BUTTON",
+                        "skip", "C1C2ENG33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2ENG31_BUTTON") || callbackData.equals("C1C2ENG32_BUTTON") || callbackData.equals("C1C2ENG33_BUTTON"))
             {
@@ -745,43 +260,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. It was (...) she received the news that she had won the award.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2ENG41button = new InlineKeyboardButton();
-                C1C2ENG41button.setText("scarcely");
-                C1C2ENG41button.setCallbackData("C1C2ENG41_BUTTON");
-                var C1C2ENG42button = new InlineKeyboardButton();
-                C1C2ENG42button.setText("hardly");
-                C1C2ENG42button.setCallbackData("C1C2ENG42_BUTTON");
-                var C1C2ENG43button = new InlineKeyboardButton();
-                C1C2ENG43button.setText("just"); // правильный ответ
-                C1C2ENG43button.setCallbackData("C1C2ENG43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2ENG41button);
-                rowInline2.add(C1C2ENG42button); rowInline3.add(C1C2ENG43button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n It was (...) she received the news that she had won the award.",
+                        "scarcely", "C1C2ENG41_BUTTON", "hardly", "C1C2ENG42_BUTTON",
+                        "just", "C1C2ENG43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2ENG41_BUTTON") || callbackData.equals("C1C2ENG42_BUTTON") || callbackData.equals("C1C2ENG43_BUTTON"))
             {
@@ -791,41 +272,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (i == f && i != 0 && f != 0)
                 {
-                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. (...) he considered his options, he made the decision to resign.";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var C1C2ENG51button = new InlineKeyboardButton();
-                    C1C2ENG51button.setText("Although");
-                    C1C2ENG51button.setCallbackData("C1C2ENG51_BUTTON");
-                    var C1C2ENG52button = new InlineKeyboardButton();
-                    C1C2ENG52button.setText("Despite");
-                    C1C2ENG52button.setCallbackData("C1C2ENG52_BUTTON");
-                    var C1C2ENG53button = new InlineKeyboardButton();
-                    C1C2ENG53button.setText("Nevertheless");
-                    C1C2ENG53button.setCallbackData("C1C2ENG53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(C1C2ENG51button); rowInline2.add(C1C2ENG52button);
-                    rowInline3.add(C1C2ENG53button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                    rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n (...) he considered his options, he made the decision to resign.",
+                            "Although", "C1C2ENG51_BUTTON", "Despite", "C1C2ENG52_BUTTON",
+                            "Nevertheless", "C1C2ENG53_BUTTON", chatId, messageId);
                 }
                 if (i == 0 && f == 0)
                 {
@@ -857,42 +306,9 @@ public class TelegramBot extends TelegramLongPollingBot
             if(callbackData.equals("A1A2GER_BUTTON"))
             {
                 a1 = 0; b1 = 0;
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. \n Vervollständige den Satz: Ich (…) gut.";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2GER11button = new InlineKeyboardButton();
-                A1A2GER11button.setText("ist");
-                A1A2GER11button.setCallbackData("A1A2GER11_BUTTON");
-                var A1A2GER12button = new InlineKeyboardButton();
-                A1A2GER12button.setText("bin");
-                A1A2GER12button.setCallbackData("A1A2GER12_BUTTON");
-                var A1A2GER13button = new InlineKeyboardButton();
-                A1A2GER13button.setText("bist");
-                A1A2GER13button.setCallbackData("A1A2GER13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2GER11button); rowInline2.add(A1A2GER12button);
-                rowInline3.add(A1A2GER13button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Vervollständige den Satz: Ich (…) gut.",
+                        "ist", "A1A2GER11_BUTTON", "bin", "A1A2GER12_BUTTON",
+                        "bist", "A1A2GER13_BUTTON", chatId, messageId);
             }
 
             if(callbackData.equals("A1A2GER11_BUTTON") || callbackData.equals("A1A2GER12_BUTTON") || callbackData.equals("A1A2GER13_BUTTON")) {
@@ -901,42 +317,9 @@ public class TelegramBot extends TelegramLongPollingBot
                     a1 += 1 ;
                 }
                 {
-                    String text = "Выберите вариант ответа, который должен стоять на месте скобок. \n Setze das richtige Wort ein: Wir gehen (...)";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var A1A2GER11button = new InlineKeyboardButton();
-                    A1A2GER11button.setText("schwimmen");
-                    A1A2GER11button.setCallbackData("A1A2GER21_BUTTON");
-                    var A1A2GER12button = new InlineKeyboardButton();
-                    A1A2GER12button.setText("schwimmst");
-                    A1A2GER12button.setCallbackData("A1A2GER22_BUTTON");
-                    var A1A2GER13button = new InlineKeyboardButton();
-                    A1A2GER13button.setText("schwimmt");
-                    A1A2GER13button.setCallbackData("A1A2GER23_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(A1A2GER11button); rowInline2.add(A1A2GER12button);
-                    rowInline3.add(A1A2GER13button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Setze das richtige Wort ein: Wir gehen (...)",
+                            "schwimmen", "A1A2GER21_BUTTON", "schwimmst", "A1A2GER22_BUTTON",
+                            "schwimmt", "A1A2GER23_BUTTON", chatId, messageId);
                 }
             }
             if(callbackData.equals("A1A2GER21_BUTTON") || callbackData.equals("A1A2GER22_BUTTON") || callbackData.equals("A1A2GER23_BUTTON"))
@@ -946,45 +329,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     b1 += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. \n Welches Wort passt? Sie (...) Lehrerin.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-
-                var A1A2ENG31button = new InlineKeyboardButton();
-                A1A2ENG31button.setText("bin");
-                A1A2ENG31button.setCallbackData("A1A2GER31_BUTTON");
-                var A1A2ENG32button = new InlineKeyboardButton();
-                A1A2ENG32button.setText("sind");
-                A1A2ENG32button.setCallbackData("A1A2GER32_BUTTON");
-                var A1A2ENG33button = new InlineKeyboardButton();
-                A1A2ENG33button.setText("ist");// правильный ответ
-                A1A2ENG33button.setCallbackData("A1A2GER33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2ENG31button);
-                rowInline2.add(A1A2ENG32button); rowInline3.add(A1A2ENG33button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Welches Wort passt? Sie (...) Lehrerin",
+                        "bin", "A1A2GER31_BUTTON", "sind", "A1A2GER32_BUTTON",
+                        "ist", "A1A2GER33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2GER31_BUTTON") || callbackData.equals("A1A2GER32_BUTTON") || callbackData.equals("A1A2GER33_BUTTON"))
             {
@@ -992,42 +339,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a1 += 1;
                 }
-                String text = "Выберите вариант ответа, который должен стоять на месте скобок. \n Wann bist du (...) Berlin gekommen?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2ENG41button = new InlineKeyboardButton();
-                C1C2ENG41button.setText("in");
-                C1C2ENG41button.setCallbackData("A1A2GER41_BUTTON");
-                var C1C2ENG42button = new InlineKeyboardButton();
-                C1C2ENG42button.setText("nach");// правильный ответ
-                C1C2ENG42button.setCallbackData("A1A2GER42_BUTTON");
-                var C1C2ENG43button = new InlineKeyboardButton();
-                C1C2ENG43button.setText("auf");
-                C1C2ENG43button.setCallbackData("A1A2GER43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2ENG41button); rowInline2.add(C1C2ENG42button);
-                rowInline3.add(C1C2ENG43button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Wann bist du (...) Berlin gekommen?",
+                        "in", "A1A2GER41_BUTTON", "nach", "A1A2GER42_BUTTON",
+                        "auf", "A1A2GER43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2GER41_BUTTON") || callbackData.equals("A1A2GER42_BUTTON") || callbackData.equals("A1A2GER43_BUTTON"))
             {
@@ -1037,41 +351,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (a1 == b1 && a1 != 0 && b1 != 0)
                 {
-                    String text = "Образуйте причастие от слова machen.";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var C1C2ENG51button = new InlineKeyboardButton();
-                    C1C2ENG51button.setText("gemacht");
-                    C1C2ENG51button.setCallbackData("A1A2GER51_BUTTON");
-                    var C1C2ENG52button = new InlineKeyboardButton();
-                    C1C2ENG52button.setText("machtest");
-                    C1C2ENG52button.setCallbackData("A1A2GER52_BUTTON");
-                    var C1C2ENG53button = new InlineKeyboardButton();
-                    C1C2ENG53button.setText("macht");
-                    C1C2ENG53button.setCallbackData("A1A2GER53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-                    rowInline1.add(C1C2ENG51button);
-                    rowInline2.add(C1C2ENG52button); rowInline3.add(C1C2ENG53button);
-                    rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                    rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Образуйте причастие от слова machen.",
+                            "gemacht", "A1A2GER51_BUTTON", "machtest", "A1A2GER52_BUTTON",
+                            "macht", "A1A2GER53_BUTTON", chatId, messageId);
                 }
                 if (a1 == 0 && b1 == 0)
                 {
@@ -1102,41 +384,9 @@ public class TelegramBot extends TelegramLongPollingBot
             if(callbackData.equals("B1B2GER_BUTTON"))
             {
                 c1 = 0; d1 = 0;
-                String text = "Как правильно использовать слово в этом предложении? \n Ich bin (...) in die Stadt gegangen.";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2GER11button = new InlineKeyboardButton();
-                A1A2GER11button.setText("gern");
-                A1A2GER11button.setCallbackData("B1B2GER11_BUTTON");
-                var A1A2GER12button = new InlineKeyboardButton();
-                A1A2GER12button.setText("oft");
-                A1A2GER12button.setCallbackData("B1B2GER12_BUTTON");
-                var A1A2GER13button = new InlineKeyboardButton();
-                A1A2GER13button.setText("allein");
-                A1A2GER13button.setCallbackData("B1B2GER13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2GER11button); rowInline2.add(A1A2GER12button);
-                rowInline3.add(A1A2GER13button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Как правильно использовать слово в этом предложении? \n Ich bin (...) in die Stadt gegangen.",
+                        "gern", "B1B2GER11_BUTTON", "oft", "B1B2GER12_BUTTON",
+                        "allein", "B1B2GER13_BUTTON", chatId, messageId);
             }
 
             if(callbackData.equals("B1B2GER11_BUTTON") || callbackData.equals("B1B2GER12_BUTTON") || callbackData.equals("B1B2GER13_BUTTON"))
@@ -1146,42 +396,9 @@ public class TelegramBot extends TelegramLongPollingBot
                     c1 += 1 ;
                 }
                 {
-                    String text = "Какое выражение используется для выражения своего мнения на счет чего-либо?";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var A1A2GER11button = new InlineKeyboardButton();
-                    A1A2GER11button.setText("Ich denke, dass");
-                    A1A2GER11button.setCallbackData("B1B2GER21_BUTTON");
-                    var A1A2GER12button = new InlineKeyboardButton();
-                    A1A2GER12button.setText("Es scheint mir, dass");
-                    A1A2GER12button.setCallbackData("B1B2GER22_BUTTON");
-                    var A1A2GER13button = new InlineKeyboardButton();
-                    A1A2GER13button.setText("Mir gefällt, dass");
-                    A1A2GER13button.setCallbackData("B1B2GER23_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(A1A2GER11button); rowInline2.add(A1A2GER12button);
-                    rowInline3.add(A1A2GER13button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Какое выражение используется для выражения своего мнения на счет чего-либо?",
+                            "Ich denke, dass", "B1B2GER21_BUTTON", "Es scheint mir, dass", "B1B2GER22_BUTTON",
+                            "Mir gefällt, dass", "B1B2GER23_BUTTON", chatId, messageId);
                 }
             }
             if(callbackData.equals("B1B2GER21_BUTTON") || callbackData.equals("B1B2GER22_BUTTON") || callbackData.equals("B1B2GER23_BUTTON"))
@@ -1190,42 +407,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     d1 += 1;
                 }
-                String text = "Какое слово подходит в этом контексте \n Am Wochenende (...) ich gerne ins Kino.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2ENG31button = new InlineKeyboardButton();
-                A1A2ENG31button.setText("gehe");// правильный ответ
-                A1A2ENG31button.setCallbackData("B1B2GER31_BUTTON");
-                var A1A2ENG32button = new InlineKeyboardButton();
-                A1A2ENG32button.setText("geht");
-                A1A2ENG32button.setCallbackData("B1B2GER32_BUTTON");
-                var A1A2ENG33button = new InlineKeyboardButton();
-                A1A2ENG33button.setText("gehen");
-                A1A2ENG33button.setCallbackData("B1B2GER33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2ENG31button); rowInline2.add(A1A2ENG32button);
-                rowInline3.add(A1A2ENG33button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1); rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3); rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какое слово подходит в этом контексте \n Am Wochenende (...) ich gerne ins Kino.",
+                        "gehe", "B1B2GER31_BUTTON", "geht", "B1B2GER32_BUTTON",
+                        "gehen", "B1B2GER33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2GER31_BUTTON") || callbackData.equals("B1B2GER32_BUTTON") || callbackData.equals("B1B2GER33_BUTTON"))
             {
@@ -1233,43 +417,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c1 += 1;
                 }
-                String text = "Какой предлог используется с глаголом warten в значении ждать кого-то?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2ENG41button = new InlineKeyboardButton();
-                C1C2ENG41button.setText("an");
-                C1C2ENG41button.setCallbackData("B1B2GER41_BUTTON");
-                var C1C2ENG42button = new InlineKeyboardButton();
-                C1C2ENG42button.setText("auf");// правильный ответ
-                C1C2ENG42button.setCallbackData("B1B2GER42_BUTTON");
-                var C1C2ENG43button = new InlineKeyboardButton();
-                C1C2ENG43button.setText("vor");
-                C1C2ENG43button.setCallbackData("B1B2GER43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2ENG41button); rowInline2.add(C1C2ENG42button);
-                rowInline3.add(C1C2ENG43button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какой предлог используется с глаголом warten в значении ждать кого-то?",
+                        "an", "B1B2GER41_BUTTON", "auf", "B1B2GER42_BUTTON",
+                        "vor", "B1B2GER43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2GER41_BUTTON") || callbackData.equals("B1B2GER42_BUTTON") || callbackData.equals("B1B2GER43_BUTTON"))
             {
@@ -1279,42 +429,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (c1 == d1 && c1 != 0 && d1 != 0)
                 {
-                    String text = "Какая форма причастия употребляется в составе сложного прошедшего времени с глаголом haben?";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var C1C2ENG51button = new InlineKeyboardButton();
-                    C1C2ENG51button.setText("Partizip I");
-                    C1C2ENG51button.setCallbackData("B1B2GER51_BUTTON");
-                    var C1C2ENG52button = new InlineKeyboardButton();
-                    C1C2ENG52button.setText("Partizip II");
-                    C1C2ENG52button.setCallbackData("B1B2GER52_BUTTON");
-                    var C1C2ENG53button = new InlineKeyboardButton();
-                    C1C2ENG53button.setText("Partizip III");
-                    C1C2ENG53button.setCallbackData("B1B2GER53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(C1C2ENG51button); rowInline2.add(C1C2ENG52button);
-                    rowInline3.add(C1C2ENG53button); rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Какая форма причастия употребляется в составе сложного прошедшего времени с глаголом haben?",
+                            "Partizip I", "B1B2GER51_BUTTON", "Partizip II", "B1B2GER52_BUTTON",
+                            "Partizip III", "B1B2GER53_BUTTON", chatId, messageId);
                 }
                 if (c1 == 0 && d1 == 0)
                 {
@@ -1345,43 +462,9 @@ public class TelegramBot extends TelegramLongPollingBot
             if(callbackData.equals("C1C2GER_BUTTON"))
             {
                 i1 = 0; f1 = 0;
-                String text = "Какая форма глагола используется в сослагательном наклонении во времени Praeteritum Perfekt?";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2GER11button = new InlineKeyboardButton();
-                A1A2GER11button.setText("Konjunktiv I");
-                A1A2GER11button.setCallbackData("C1C2GER11_BUTTON");
-                var A1A2GER12button = new InlineKeyboardButton();
-                A1A2GER12button.setText("Konjunktiv II");
-                A1A2GER12button.setCallbackData("C1C2GER12_BUTTON");
-                var A1A2GER13button = new InlineKeyboardButton();
-                A1A2GER13button.setText("Konjunktiv III");
-                A1A2GER13button.setCallbackData("C1C2GER13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2GER11button);
-                rowInline2.add(A1A2GER12button); rowInline3.add(A1A2GER13button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какая форма глагола используется в сослагательном наклонении во времени Praeteritum Perfekt?",
+                        "Konjunktiv I", "C1C2GER11_BUTTON", "Konjunktiv II", "C1C2GER12_BUTTON",
+                        "Konjunktiv III", "C1C2GER13_BUTTON", chatId, messageId);
             }
 
             if(callbackData.equals("C1C2GER11_BUTTON") || callbackData.equals("C1C2GER12_BUTTON") || callbackData.equals("C1C2GER13_BUTTON"))
@@ -1391,43 +474,9 @@ public class TelegramBot extends TelegramLongPollingBot
                     i1 += 1 ;
                 }
                 {
-                    String text = "Какой из следующих случаев употребления Konjunktiv I является правильным?";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var A1A2GER11button = new InlineKeyboardButton();
-                    A1A2GER11button.setText("Zum Ausdruck von Möglichkeiten und Annahmen");
-                    A1A2GER11button.setCallbackData("C1C2GER21_BUTTON");
-                    var A1A2GER12button = new InlineKeyboardButton();
-                    A1A2GER12button.setText("Für indirekte Rede");
-                    A1A2GER12button.setCallbackData("C1C2GER22_BUTTON");
-                    var A1A2GER13button = new InlineKeyboardButton();
-                    A1A2GER13button.setText("Im Alltag für die Höflichkeitsformen");
-                    A1A2GER13button.setCallbackData("C1C2GER23_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(A1A2GER11button);
-                    rowInline2.add(A1A2GER12button); rowInline3.add(A1A2GER13button);
-                    rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Какой из следующих случаев употребления Konjunktiv I является правильным?",
+                            "Zum Ausdruck von Möglichkeiten und Annahmen", "C1C2GER21_BUTTON", "Für indirekte Rede", "C1C2GER22_BUTTON",
+                            "Im Alltag für die Höflichkeitsformen", "C1C2GER23_BUTTON", chatId, messageId);
                 }
             }
             if(callbackData.equals("C1C2GER21_BUTTON") || callbackData.equals("C1C2GER22_BUTTON") || callbackData.equals("C1C2GER23_BUTTON"))
@@ -1437,44 +486,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     f1 += 1;
                 }
-                String text = "Какое слово использовать в этом предложении? \n As war (...) Niederlage, aber sie hat tapfer gekämpft.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2ENG31button = new InlineKeyboardButton();
-                A1A2ENG31button.setText("keine");// правильный ответ
-                A1A2ENG31button.setCallbackData("C1C2GER31_BUTTON");
-                var A1A2ENG32button = new InlineKeyboardButton();
-                A1A2ENG32button.setText("irgendeine");
-                A1A2ENG32button.setCallbackData("C1C2GER32_BUTTON");
-                var A1A2ENG33button = new InlineKeyboardButton();
-                A1A2ENG33button.setText("eine");
-                A1A2ENG33button.setCallbackData("C1C2GER33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2ENG31button);
-                rowInline2.add(A1A2ENG32button); rowInline3.add(A1A2ENG33button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какое слово использовать в этом предложении? \n As war (...) Niederlage, aber sie hat tapfer gekämpft.",
+                        "keine", "C1C2GER31_BUTTON", "irgendeine", "C1C2GER32_BUTTON",
+                        "eine", "C1C2GER33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2GER31_BUTTON") || callbackData.equals("C1C2GER32_BUTTON") || callbackData.equals("C1C2GER33_BUTTON"))
             {
@@ -1482,44 +496,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i1 += 1;
                 }
-                String text = "Какой падеж используется после предлога wegen?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2ENG41button = new InlineKeyboardButton();
-                C1C2ENG41button.setText("Dativ");
-                C1C2ENG41button.setCallbackData("C1C2GER41_BUTTON");
-                var C1C2ENG42button = new InlineKeyboardButton();
-                C1C2ENG42button.setText("Akkusativ");// правильный ответ
-                C1C2ENG42button.setCallbackData("C1C2GER42_BUTTON");
-                var C1C2ENG43button = new InlineKeyboardButton();
-                C1C2ENG43button.setText("Genitiv");
-                C1C2ENG43button.setCallbackData("C1C2GER43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2ENG41button);
-                rowInline2.add(C1C2ENG42button); rowInline3.add(C1C2ENG43button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какой падеж используется после предлога wegen?",
+                        "Dativ", "C1C2GER41_BUTTON", "Akkusativ", "C1C2GER42_BUTTON",
+                        "Genitiv", "C1C2GER43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2GER41_BUTTON") || callbackData.equals("C1C2GER42_BUTTON") || callbackData.equals("C1C2GER43_BUTTON"))
             {
@@ -1529,43 +508,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (i1 == f1 && i1 != 0 && f1 != 0)
                 {
-                    String text = "Какая форма времени Kant haben Plusquamperfekt состоит из глагола haben и причастия II основного глагола?";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var C1C2ENG51button = new InlineKeyboardButton();
-                    C1C2ENG51button.setText("Konditional II");
-                    C1C2ENG51button.setCallbackData("C1C2GER51_BUTTON");
-                    var C1C2ENG52button = new InlineKeyboardButton();
-                    C1C2ENG52button.setText("Futur II");
-                    C1C2ENG52button.setCallbackData("C1C2GER52_BUTTON");
-                    var C1C2ENG53button = new InlineKeyboardButton();
-                    C1C2ENG53button.setText("Konjunktiv II");
-                    C1C2ENG53button.setCallbackData("C1C2GER53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(C1C2ENG51button);
-                    rowInline2.add(C1C2ENG52button); rowInline3.add(C1C2ENG53button);
-                    rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Какая форма времени Kant haben Plusquamperfekt состоит из глагола haben и причастия II основного глагола?",
+                            "Konditional II", "C1C2GER51_BUTTON", "Futur II", "C1C2GER52_BUTTON",
+                            "Konjunktiv II", "C1C2GER53_BUTTON", chatId, messageId);
                 }
                 if (i1 == 0 && f1 == 0)
                 {
@@ -1598,43 +543,9 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 a2 = 0;
                 b2 = 0;
-                String text = "Выберите правильный цвет. \n Quelle est la couleur du ciel?";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2FRE11button = new InlineKeyboardButton();
-                A1A2FRE11button.setText("bleu");// правильный ответ
-                A1A2FRE11button.setCallbackData("A1A2FRE11_BUTTON");
-                var A1A2FRE12button = new InlineKeyboardButton();
-                A1A2FRE12button.setText("rouge");
-                A1A2FRE12button.setCallbackData("A1A2FRE12_BUTTON");
-                var A1A2FRE13button = new InlineKeyboardButton();
-                A1A2FRE13button.setText("jaune");
-                A1A2FRE13button.setCallbackData("A1A2FRE13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2FRE11button);
-                rowInline2.add(A1A2FRE12button); rowInline3.add(A1A2FRE13button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите правильный цвет. \n Quelle est la couleur du ciel?",
+                        "bleu", "A1A2FRE11_BUTTON", "rouge", "A1A2FRE12_BUTTON",
+                        "jaune", "A1A2FRE13_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2FRE11_BUTTON") || callbackData.equals("A1A2FRE12_BUTTON") || callbackData.equals("A1A2FRE13_BUTTON"))
             {
@@ -1642,44 +553,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a2 += 1;
                 }
-                String text = "Выберите правильную форму будущего времени глагола aller. \n Qu'est-ce que tu vas faire ce weekend?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2FRE21button = new InlineKeyboardButton();
-                A1A2FRE21button.setText("Je aller au cinéma");
-                A1A2FRE21button.setCallbackData("A1A2FRE21_BUTTON");
-                var A1A2FRE22button = new InlineKeyboardButton();
-                A1A2FRE22button.setText("Je vais au cinéma");// правильный ответ
-                A1A2FRE22button.setCallbackData("A1A2FRE22_BUTTON");
-                var A1A2FRE23button = new InlineKeyboardButton();
-                A1A2FRE23button.setText("Je vais à la cinéma");
-                A1A2FRE23button.setCallbackData("A1A2FRE23_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2FRE21button);
-                rowInline2.add(A1A2FRE22button); rowInline3.add(A1A2FRE23button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите правильную форму будущего времени глагола aller. \n Qu'est-ce que tu vas faire ce weekend?",
+                        "Je aller au cinéma", "A1A2FRE21_BUTTON", "e vais au cinéma", "A1A2FRE22_BUTTON",
+                        "Je vais à la cinéma", "A1A2FRE23_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2FRE21_BUTTON") || callbackData.equals("A1A2FRE22_BUTTON") || callbackData.equals("A1A2FRE23_BUTTON"))
             {
@@ -1687,44 +563,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     b2 += 1;
                 }
-                String text = "Выберите правильное местоположение. \n Où est la bibliothèque?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2FRE31button = new InlineKeyboardButton();
-                A1A2FRE31button.setText("à gauche");// правильный ответ
-                A1A2FRE31button.setCallbackData("A1A2FRE31_BUTTON");
-                var A1A2FRE32button = new InlineKeyboardButton();
-                A1A2FRE32button.setText("à droite");
-                A1A2FRE32button.setCallbackData("A1A2FRE32_BUTTON");
-                var A1A2FRE33button = new InlineKeyboardButton();
-                A1A2FRE33button.setText("derrière");
-                A1A2FRE33button.setCallbackData("A1A2FRE33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2FRE31button);
-                rowInline2.add(A1A2FRE32button); rowInline3.add(A1A2FRE33button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите правильное местоположение. \n Où est la bibliothèque?",
+                        "à gauche", "A1A2FRE31_BUTTON", "à droite", "A1A2FRE32_BUTTON",
+                        "derrière", "A1A2FRE33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2FRE31_BUTTON") || callbackData.equals("A1A2FRE32_BUTTON") || callbackData.equals("A1A2FRE33_BUTTON"))
             {
@@ -1732,44 +573,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a2 += 1;
                 }
-                String text = "Выберите правильное описание погоды. \n Quel temps fait-il aujourd'hui?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var A1A2FRE41button = new InlineKeyboardButton();
-                A1A2FRE41button.setText("Il fait froid");// правильный ответ
-                A1A2FRE41button.setCallbackData("A1A2FRE41_BUTTON");
-                var A1A2FRE42button = new InlineKeyboardButton();
-                A1A2FRE42button.setText("Il faire froid");
-                A1A2FRE42button.setCallbackData("A1A2FRE42_BUTTON");
-                var A1A2FRE43button = new InlineKeyboardButton();
-                A1A2FRE43button.setText("Il fait chaud");
-                A1A2FRE43button.setCallbackData("A1A2FRE43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(A1A2FRE41button);
-                rowInline2.add(A1A2FRE42button); rowInline3.add(A1A2FRE43button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите правильное описание погоды. \n Quel temps fait-il aujourd'hui?",
+                        "Il fait froid", "A1A2FRE41_BUTTON", "Il faire froid", "A1A2FRE42_BUTTON",
+                        "Il fait chaud", "A1A2FRE43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("A1A2FRE41_BUTTON") || callbackData.equals("A1A2FRE42_BUTTON") || callbackData.equals("A1A2FRE43_BUTTON"))
             {
@@ -1779,43 +585,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (a2 == b2 && a2 != 0 && b2 != 0)
                 {
-                    String text = "Выберите правильное количество. \n Combien de frères et de sœurs as-tu?";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var A1A2FRE51button = new InlineKeyboardButton();
-                    A1A2FRE51button.setText("J'ai trois sœurs");
-                    A1A2FRE51button.setCallbackData("A1A2FRE51_BUTTON");
-                    var A1A2FRE52button = new InlineKeyboardButton();
-                    A1A2FRE52button.setText("J'ai six frères");
-                    A1A2FRE52button.setCallbackData("A1A2FRE52_BUTTON");
-                    var A1A2FRE53button = new InlineKeyboardButton();
-                    A1A2FRE53button.setText("J'ai un frère et une sœur");
-                    A1A2FRE53button.setCallbackData("A1A2FRE53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(A1A2FRE51button);
-                    rowInline2.add(A1A2FRE52button); rowInline3.add(A1A2FRE53button);
-                    rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Выберите правильное количество. \n Combien de frères et de sœurs as-tu?",
+                            "J'ai trois sœurs", "A1A2FRE51_BUTTON", "J'ai six frères", "A1A2FRE52_BUTTON",
+                            "J'ai un frère et une sœur", "A1A2FRE53_BUTTON", chatId, messageId);
                 }
                 if (a2 == 0 && b2 == 0)
                 {
@@ -1848,43 +620,9 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 c2 = 0;
                 d2 = 0;
-                String text = "Выберите правильное слово для заполнения пропуска. \n Utilisez le mot correctement dans la phrase : Je suis allé au cinéma (...) regarder un film";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var B1B2FRE11button = new InlineKeyboardButton();
-                B1B2FRE11button.setText("pour");// правильный ответ
-                B1B2FRE11button.setCallbackData("B1B2FRE11_BUTTON");
-                var B1B2FRE12button = new InlineKeyboardButton();
-                B1B2FRE12button.setText("à");
-                B1B2FRE12button.setCallbackData("B1B2FRE12_BUTTON");
-                var B1B2FRE13button = new InlineKeyboardButton();
-                B1B2FRE13button.setText("pour");
-                B1B2FRE13button.setCallbackData("B1B2FRE13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2FRE11button);
-                rowInline2.add(B1B2FRE12button); rowInline3.add(B1B2FRE13button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите правильное слово для заполнения пропуска. \n Utilisez le mot correctement dans la phrase : Je suis allé au cinéma (...) regarder un film",
+                        "pour", "B1B2FRE11_BUTTON", "à", "B1B2FRE12_BUTTON",
+                        "pour", "B1B2FRE13_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2FRE11_BUTTON") || callbackData.equals("B1B2FRE12_BUTTON") || callbackData.equals("B1B2FRE13_BUTTON"))
             {
@@ -1892,44 +630,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c2 += 1;
                 }
-                String text = "Выберите правильное предлог для завершения фразы. \n Elle est arrivée  Paris il y a deux semaines";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var B1B2FRE21button = new InlineKeyboardButton();
-                B1B2FRE21button.setText("à");// правильный ответ
-                B1B2FRE21button.setCallbackData("B1B2FRE21_BUTTON");
-                var B1B2FRE22button = new InlineKeyboardButton();
-                B1B2FRE22button.setText("de");
-                B1B2FRE22button.setCallbackData("B1B2FRE22_BUTTON");
-                var B1B2FRE23button = new InlineKeyboardButton();
-                B1B2FRE23button.setText("dans");
-                B1B2FRE23button.setCallbackData("B1B2FRE23_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2FRE21button);
-                rowInline2.add(B1B2FRE22button); rowInline3.add(B1B2FRE23button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Выберите правильное предлог для завершения фразы. \n Elle est arrivée  Paris il y a deux semaines",
+                        "à", "B1B2FRE21_BUTTON", "de", "B1B2FRE22_BUTTON",
+                        "dans", "B1B2FRE23_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2FRE21_BUTTON") || callbackData.equals("B1B2FRE22_BUTTON") || callbackData.equals("B1B2FRE23_BUTTON"))
             {
@@ -1937,44 +640,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     d2 += 1;
                 }
-                String text = "Согласуйте глагол partir в будущем времени для нous.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var B1B2FRE31button = new InlineKeyboardButton();
-                B1B2FRE31button.setText("partira");
-                B1B2FRE31button.setCallbackData("B1B2FRE31_BUTTON");
-                var B1B2FRE32button = new InlineKeyboardButton();
-                B1B2FRE32button.setText("partirez");
-                B1B2FRE32button.setCallbackData("B1B2FRE32_BUTTON");
-                var B1B2FRE33button = new InlineKeyboardButton();
-                B1B2FRE33button.setText("partirons");// правильный ответ
-                B1B2FRE33button.setCallbackData("B1B2FRE33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2FRE31button);
-                rowInline2.add(B1B2FRE32button); rowInline3.add(B1B2FRE33button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Согласуйте глагол partir в будущем времени для нous.",
+                        "partira", "B1B2FRE31_BUTTON", "partirez", "B1B2FRE32_BUTTON",
+                        "partirons", "B1B2FRE33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2FRE31_BUTTON") || callbackData.equals("B1B2FRE32_BUTTON") || callbackData.equals("B1B2FRE33_BUTTON"))
             {
@@ -1982,44 +650,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c2 += 1;
                 }
-                String text = "Найдите женский род к слову grand.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var B1B2FRE41button = new InlineKeyboardButton();
-                B1B2FRE41button.setText("grandeur");
-                B1B2FRE41button.setCallbackData("B1B2FRE41_BUTTON");
-                var B1B2FRE42button = new InlineKeyboardButton();
-                B1B2FRE42button.setText("grande");// правильный ответ
-                B1B2FRE42button.setCallbackData("B1B2FRE42_BUTTON");
-                var B1B2FRE43button = new InlineKeyboardButton();
-                B1B2FRE43button.setText("grandement");
-                B1B2FRE43button.setCallbackData("B1B2FRE43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(B1B2FRE41button);
-                rowInline2.add(B1B2FRE42button); rowInline3.add(B1B2FRE43button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("айдите женский род к слову grand.",
+                        "grandeur", "B1B2FRE41_BUTTON", "grande", "B1B2FRE42_BUTTON",
+                        "grandement", "B1B2FRE43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("B1B2FRE41_BUTTON") || callbackData.equals("B1B2FRE42_BUTTON") || callbackData.equals("B1B2FRE43_BUTTON"))
             {
@@ -2029,43 +662,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (c2 == d2 && c2 != 0 && d2 != 0)
                 {
-                    String text = "Выберите правильную форму настоящего сослагательного наклонения глагола être для множественного числа.";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var B1B2FRE51button = new InlineKeyboardButton();
-                    B1B2FRE51button.setText("soyons");
-                    B1B2FRE51button.setCallbackData("B1B2FRE51_BUTTON");
-                    var B1B2FRE52button = new InlineKeyboardButton();
-                    B1B2FRE52button.setText("sommes");
-                    B1B2FRE52button.setCallbackData("B1B2FRE52_BUTTON");
-                    var B1B2FRE53button = new InlineKeyboardButton();
-                    B1B2FRE53button.setText("soient");
-                    B1B2FRE53button.setCallbackData("B1B2FRE53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(B1B2FRE51button);
-                    rowInline2.add(B1B2FRE52button); rowInline3.add(B1B2FRE53button);
-                    rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Выберите правильную форму настоящего сослагательного наклонения глагола être для множественного числа.",
+                            "soyons", "B1B2FRE51_BUTTON", "sommes", "B1B2FRE52_BUTTON",
+                            "soient", "B1B2FRE53_BUTTON", chatId, messageId);
                 }
                 if (c2 == 0 && d2 == 0)
                 {
@@ -2097,43 +696,9 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 i2 = 0;
                 f2 = 0;
-                String text = "Какое слово использовать в этом предложении: \n l est important de (...) attention à ce que tu dis.";
-                EditMessageText message = new EditMessageText();
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2FRE11button = new InlineKeyboardButton();
-                C1C2FRE11button.setText("faire");// правильный ответ
-                C1C2FRE11button.setCallbackData("C1C2FRE11_BUTTON");
-                var C1C2FRE12button = new InlineKeyboardButton();
-                C1C2FRE12button.setText("mettre");
-                C1C2FRE12button.setCallbackData("C1C2FRE12_BUTTON");
-                var C1C2FRE13button = new InlineKeyboardButton();
-                C1C2FRE13button.setText("porter");
-                C1C2FRE13button.setCallbackData("C1C2FRE13_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2FRE11button);
-                rowInline2.add(C1C2FRE12button); rowInline3.add(C1C2FRE13button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какое слово использовать в этом предложении: \n l est important de (...) attention à ce que tu dis.",
+                        "faire", "C1C2FRE11_BUTTON", "mettre", "C1C2FRE12_BUTTON",
+                        "porter", "C1C2FRE13_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2FRE11_BUTTON") || callbackData.equals("C1C2FRE12_BUTTON") || callbackData.equals("C1C2FRE13_BUTTON"))
             {
@@ -2141,44 +706,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i2 += 1;
                 }
-                String text = "Какой из представленных времен употребляется для описания действия, которое происходило до другого прошедшего момента времени?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2FRE21button = new InlineKeyboardButton();
-                C1C2FRE21button.setText("Le passé composé");
-                C1C2FRE21button.setCallbackData("C1C2FRE21_BUTTON");
-                var C1C2FRE22button = new InlineKeyboardButton();
-                C1C2FRE22button.setText("L'imparfait");// правильный ответ
-                C1C2FRE22button.setCallbackData("C1C2FRE22_BUTTON");
-                var C1C2FRE23button = new InlineKeyboardButton();
-                C1C2FRE23button.setText("Le plus-que-parfait");
-                C1C2FRE23button.setCallbackData("C1C2FRE23_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2FRE21button);
-                rowInline2.add(C1C2FRE22button); rowInline3.add(C1C2FRE23button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какой из представленных времен употребляется для описания действия, которое происходило до другого прошедшего момента времени?",
+                        "Le passé composé", "C1C2FRE21_BUTTON", "L'imparfait", "C1C2FRE22_BUTTON",
+                        "Le plus-que-parfait", "C1C2FRE23_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2FRE21_BUTTON") || callbackData.equals("C1C2FRE22_BUTTON") || callbackData.equals("C1C2FRE23_BUTTON"))
             {
@@ -2186,44 +716,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     f2 += 1;
                 }
-                String text = "Какое слово подходит в этом контексте: \n Je (...) eu l'occasion de visiter Paris plusieurs fois.";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2FRE31button = new InlineKeyboardButton();
-                C1C2FRE31button.setText("suis");
-                C1C2FRE31button.setCallbackData("C1C2FRE31_BUTTON");
-                var C1C2FRE32button = new InlineKeyboardButton();
-                C1C2FRE32button.setText("ai");// правильный ответ
-                C1C2FRE32button.setCallbackData("C1C2FRE32_BUTTON");
-                var C1C2FRE33button = new InlineKeyboardButton();
-                C1C2FRE33button.setText("avais");
-                C1C2FRE33button.setCallbackData("C1C2FRE33_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2FRE31button);
-                rowInline2.add(C1C2FRE32button); rowInline3.add(C1C2FRE33button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какое слово подходит в этом контексте: \n Je (...) eu l'occasion de visiter Paris plusieurs fois.",
+                        "suis", "C1C2FRE31_BUTTON", "ai", "C1C2FRE32_BUTTON",
+                        "avais", "C1C2FRE33_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2FRE31_BUTTON") || callbackData.equals("C1C2FRE32_BUTTON") || callbackData.equals("C1C2FRE33_BUTTON"))
             {
@@ -2231,44 +726,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i2 += 1;
                 }
-                String text = "Какое выражение используется для описания события, которое могло произойти, но не случилось?";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int) messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                var C1C2FRE41button = new InlineKeyboardButton();
-                C1C2FRE41button.setText("Si j'avais su");// правильный ответ
-                C1C2FRE41button.setCallbackData("C1C2FRE41_BUTTON");
-                var C1C2FRE42button = new InlineKeyboardButton();
-                C1C2FRE42button.setText("Si je savais");
-                C1C2FRE42button.setCallbackData("C1C2FRE42_BUTTON");
-                var C1C2FRE43button = new InlineKeyboardButton();
-                C1C2FRE43button.setText("Si j'ai su");
-                C1C2FRE43button.setCallbackData("C1C2FRE43_BUTTON");
-                var BACKLANGbutton = new InlineKeyboardButton();
-                BACKLANGbutton.setText("Вернуться к выбору языка");
-                BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                var BACKLEVELENGbutton = new InlineKeyboardButton();
-                BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                rowInline1.add(C1C2FRE41button);
-                rowInline2.add(C1C2FRE42button); rowInline3.add(C1C2FRE43button);
-                rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang("Какое выражение используется для описания события, которое могло произойти, но не случилось?",
+                        "Si j'avais su", "C1C2FRE41_BUTTON", "Si je savais", "C1C2FRE42_BUTTON",
+                        "Si j'ai su", "C1C2FRE43_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("C1C2FRE41_BUTTON") || callbackData.equals("C1C2FRE42_BUTTON") || callbackData.equals("C1C2FRE43_BUTTON"))
             {
@@ -2278,44 +738,9 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (i2 == f2 && i2 != 0 && f2 != 0)
                 {
-                    String text = "Какой из следующих видов сослагательного наклонения правильно описывает предположение или желание в настоящем времени?";
-                    EditMessageText message = new EditMessageText();
-                    message.setChatId(String.valueOf(chatId));
-                    message.setText(text);
-                    message.setMessageId((int) messageId);
-
-                    InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                    List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-                    List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-                    var C1C2FRE51button = new InlineKeyboardButton();
-                    C1C2FRE51button.setText("Le subjonctif imparfait");
-                    C1C2FRE51button.setCallbackData("C1C2FRE51_BUTTON");
-                    var C1C2FRE52button = new InlineKeyboardButton();
-                    C1C2FRE52button.setText("Le subjonctif présent");
-                    C1C2FRE52button.setCallbackData("C1C2FRE52_BUTTON");
-                    var C1C2FRE53button = new InlineKeyboardButton();
-                    C1C2FRE53button.setText("Le subjonctif passé");
-                    C1C2FRE53button.setCallbackData("C1C2FRE53_BUTTON");
-                    var BACKLANGbutton = new InlineKeyboardButton();
-                    BACKLANGbutton.setText("Вернуться к выбору языка");
-                    BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-                    var BACKLEVELENGbutton = new InlineKeyboardButton();
-                    BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-                    BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-                    rowInline1.add(C1C2FRE51button);
-                    rowInline2.add(C1C2FRE52button); rowInline3.add(C1C2FRE53button);
-                    rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-                    rowsInline.add(rowInline1);
-                    rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-                    rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-                    markupInline.setKeyboard(rowsInline);
-                    message.setReplyMarkup(markupInline);
-                    exe(message);
+                    Lang("Какой из следующих видов сослагательного наклонения правильно описывает предположение или желание в настоящем времени?",
+                            "Le subjonctif imparfait", "C1C2FRE51_BUTTON", "Le subjonctif présent", "C1C2FRE52_BUTTON",
+                            "Le subjonctif passé", "C1C2FRE53_BUTTON", chatId, messageId);
                 }
                 if (i2 == 0 && f2 == 0)
                 {
@@ -2345,141 +770,27 @@ public class TelegramBot extends TelegramLongPollingBot
 
             if(callbackData.equals("BACKLANG1_BUTTON"))
             {
-                SendMessage message = new SendMessage();
-                message.setChatId(String.valueOf(chatId));
-                message.setText("Выбери интересующий тебя язык");
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-
-                var ENGbutton = new InlineKeyboardButton();
-                ENGbutton.setText("Английский");
-                ENGbutton.setCallbackData("ENG_BUTTON");
-                var GERbutton = new InlineKeyboardButton();
-                GERbutton.setText("Немецкий");
-                GERbutton.setCallbackData("GER_BUTTON");
-                var FREbutton = new InlineKeyboardButton();
-                FREbutton.setText("Французский");
-                FREbutton.setCallbackData("FRE_BUTTON");
-
-                rowInline1.add(ENGbutton);
-                rowInline2.add(GERbutton);
-                rowInline3.add(FREbutton);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                try
-                {
-                    execute(message);
-                }
-                catch (TelegramApiException e)
-                {
-                }
+                Lang1("Выбери интересующий тебя язык",
+                        "Английский", "ENG_BUTTON", "Немецкий", "GER_BUTTON",
+                        "Французский", "FRE_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("BACKLEVELENG_BUTTON"))
             {
-                String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-
-                var A1A2button = new InlineKeyboardButton();
-                A1A2button.setText("Минимальный");
-                A1A2button.setCallbackData("A1A2_BUTTON");
-                var B1B2button = new InlineKeyboardButton();
-                B1B2button.setText("Средний");
-                B1B2button.setCallbackData("B1B2_BUTTON");
-                var C1C2button = new InlineKeyboardButton();
-                C1C2button.setText("Максимальный");
-                C1C2button.setCallbackData("C1C2_BUTTON");
-
-                rowInline1.add(A1A2button);
-                rowInline2.add(B1B2button);
-                rowInline3.add(C1C2button);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык",
+                        "Минимальный", "A1A2_BUTTON", "Средний", "B1B2_BUTTON",
+                        "Максимальный", "C1C2_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("BACKLEVELGER_BUTTON"))
             {
-                String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-
-                var A1A2button = new InlineKeyboardButton();
-                A1A2button.setText("Минимальный");
-                A1A2button.setCallbackData("A1A2_BUTTON");
-                var B1B2button = new InlineKeyboardButton();
-                B1B2button.setText("Средний");
-                B1B2button.setCallbackData("B1B2_BUTTON");
-                var C1C2button = new InlineKeyboardButton();
-                C1C2button.setText("Максимальный");
-                C1C2button.setCallbackData("C1C2_BUTTON");
-
-                rowInline1.add(A1A2button);
-                rowInline2.add(B1B2button);
-                rowInline3.add(C1C2button);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3);
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык",
+                        "Минимальный", "A1A2_BUTTON", "Средний", "B1B2_BUTTON",
+                        "Максимальный", "C1C2_BUTTON", chatId, messageId);
             }
             if(callbackData.equals("BACKLEVELFRE_BUTTON"))
             {
-                String text = "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь французский язык";
-                EditMessageText message = new EditMessageText();
-
-                message.setChatId(String.valueOf(chatId));
-                message.setText(text);
-                message.setMessageId((int)messageId);
-                InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-                List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-                List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-
-                var A1A2button = new InlineKeyboardButton();
-                A1A2button.setText("Минимальный");
-                A1A2button.setCallbackData("A1A2_BUTTON");
-                var B1B2button = new InlineKeyboardButton();
-                B1B2button.setText("Средний");
-                B1B2button.setCallbackData("B1B2_BUTTON");
-                var C1C2button = new InlineKeyboardButton();
-                C1C2button.setText("Максимальный");
-                C1C2button.setCallbackData("C1C2_BUTTON");
-
-                rowInline1.add(A1A2button);
-                rowInline2.add(B1B2button);
-                rowInline3.add(C1C2button);
-
-                rowsInline.add(rowInline1);
-                rowsInline.add(rowInline2);
-                rowsInline.add(rowInline3);
-
-                markupInline.setKeyboard(rowsInline);
-                message.setReplyMarkup(markupInline);
-                exe(message);
+                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь французский язык",
+                        "Минимальный", "A1A2_BUTTON", "Средний", "B1B2_BUTTON",
+                        "Максимальный", "C1C2_BUTTON", chatId, messageId);
             }
         }
     }
@@ -2541,33 +852,32 @@ public class TelegramBot extends TelegramLongPollingBot
         }
         catch (TelegramApiException e)
         {
-
+            System.out.println("error" + e.getMessage());
         }
     }
-    public void A1A2ENG1(long chatId, long messageId)
+    public void Lang(String text, String s1, String data1, String s2, String data2, String s3, String data3, long chatId, long messageId)
     {
-        a = 0;
-        b = 0;
-        String text = "Выберите правильный ответ в этом диалоге. Hello! I’m Susanna. What’s your name?";
         EditMessageText message = new EditMessageText();
-
         message.setChatId(String.valueOf(chatId));
         message.setText(text);
+        System.out.println( message.getText());
+
         message.setMessageId((int) messageId);
         InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
         List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
         List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
 
-        var A1A2ENG11button = new InlineKeyboardButton();
-        A1A2ENG11button.setText("I do Anna");
-        A1A2ENG11button.setCallbackData("A1A2ENG11_BUTTON");
-        var A1A2ENG12button = new InlineKeyboardButton();
-        A1A2ENG12button.setText("My name Anna");
-        A1A2ENG12button.setCallbackData("A1A2ENG12_BUTTON");
-        var A1A2ENG13button = new InlineKeyboardButton();
-        A1A2ENG13button.setText("My name is Anna");
-        A1A2ENG13button.setCallbackData("A1A2ENG13_BUTTON");
+        var customButton1 = new InlineKeyboardButton();
+        customButton1.setText(s1);
+        customButton1.setCallbackData(data1);
+        var customButton2 = new InlineKeyboardButton();
+        customButton2.setText(s2);
+        customButton2.setCallbackData(data2);
+        var customButton3 = new InlineKeyboardButton();
+        customButton3.setText(s3);
+        customButton3.setCallbackData(data3);
+
         var BACKLANGbutton = new InlineKeyboardButton();
         BACKLANGbutton.setText("Вернуться к выбору языка");
         BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
@@ -2575,13 +885,44 @@ public class TelegramBot extends TelegramLongPollingBot
         BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
         BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
 
-        rowInline1.add(A1A2ENG11button);
-        rowInline2.add(A1A2ENG12button); rowInline3.add(A1A2ENG13button);
+        rowInline1.add(customButton1);
+        rowInline2.add(customButton2); rowInline3.add(customButton3);
         rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
 
         rowsInline.add(rowInline1);
         rowsInline.add(rowInline2); rowsInline.add(rowInline3);
         rowsInline.add(rowInline4); rowsInline.add(rowInline5);
+
+        markupInline.setKeyboard(rowsInline);
+        message.setReplyMarkup(markupInline);
+        exe(message);
+    }
+    public void Lang1(String text, String s1, String data1, String s2, String data2, String s3, String data3, long chatId, long messageId)
+    {
+        EditMessageText message = new EditMessageText();
+        message.setChatId(String.valueOf(chatId));
+        message.setText(text);
+        System.out.println(message.getText());
+        message.setMessageId((int) messageId);
+        InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+        List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+
+        var customButton1 = new InlineKeyboardButton();
+        customButton1.setText(s1);
+        customButton1.setCallbackData(data1);
+        var customButton2 = new InlineKeyboardButton();
+        customButton2.setText(s2);
+        customButton2.setCallbackData(data2);
+        var customButton3 = new InlineKeyboardButton();
+        customButton3.setText(s3);
+        customButton3.setCallbackData(data3);
+
+        rowInline1.add(customButton1);
+        rowInline2.add(customButton2); rowInline3.add(customButton3);
+
+        rowsInline.add(rowInline1);
+        rowsInline.add(rowInline2); rowsInline.add(rowInline3);
 
         markupInline.setKeyboard(rowsInline);
         message.setReplyMarkup(markupInline);
@@ -2598,7 +939,7 @@ public class TelegramBot extends TelegramLongPollingBot
         }
         catch (TelegramApiException e)
         {
-
+            System.out.println("error" + e.getMessage());
         }
     }
     public void exe(EditMessageText message)
@@ -2609,6 +950,7 @@ public class TelegramBot extends TelegramLongPollingBot
         }
         catch (TelegramApiException e)
         {
+            System.out.println("error" + e.getMessage());
         }
     }
 }
