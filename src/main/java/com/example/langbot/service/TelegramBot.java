@@ -1,21 +1,44 @@
 package com.example.langbot.service;
 import com.example.langbot.config.BotConfig;
+//import com.example.langbot.model.User;
+//import com.example.langbot.model.UserRepository;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.awt.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.List;
+
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 @Slf4j
 @Component
 public class TelegramBot extends TelegramLongPollingBot
 {
+//    @Autowired
+//    private UserRepository userRepository;
+
     @Autowired
     private final BotConfig config;
     public TelegramBot(BotConfig config) {this.config = config;}
@@ -42,6 +65,7 @@ public class TelegramBot extends TelegramLongPollingBot
             switch (messageText)
             {
                 case "/start":
+//                    registerUser(update.getMessage());
                     startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
                     break;
                 default: sendMessage(chatId, "Данная команда не поддерживается");
@@ -54,9 +78,16 @@ public class TelegramBot extends TelegramLongPollingBot
             long chatId = update.getCallbackQuery().getMessage().getChatId();
             if(callbackData.equals("ENG_BUTTON"))
             {
-                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык",
-                        "Минимальный", "A1A2ENG_BUTTON", "Средний", "B1B2ENG_BUTTON",
-                        "Максимальный", "C1C2ENG_BUTTON", chatId, messageId);
+//                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык",
+//                        "Минимальный", "A1A2ENG_BUTTON", "Средний", "B1B2ENG_BUTTON",
+//                        "Максимальный", "C1C2ENG_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang33(0, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("GER_BUTTON"))
             {
@@ -794,6 +825,26 @@ public class TelegramBot extends TelegramLongPollingBot
             }
         }
     }
+
+//    private void registerUser(Message msg)
+//    {
+//        if(userRepository.findById(msg.getChatId()).isEmpty())
+//        {
+//            var chatId = msg.getChatId();
+//            var chat = msg.getChat();
+//
+//            User user = new User();
+//
+//            user.setChatId(chatId);
+//            user.setFirstName(chat.getFirstName());
+//            user.setLastName(chat.getLastName());
+//            user.setUserName(chat.getUserName());
+//            user.setRegisteredAt(new Timestamp(System.currentTimeMillis()));
+//
+//            userRepository.save(user);
+//       }
+//    }
+
     public void messageText(String text, long chatId, long messageId)
     {
         EditMessageText message = new EditMessageText();
@@ -951,6 +1002,90 @@ public class TelegramBot extends TelegramLongPollingBot
         catch (TelegramApiException e)
         {
             System.out.println("error" + e.getMessage());
+        }
+    }
+
+    public void Lang33(int questionIndex, long chatId, long messageId) throws IOException {
+        // Загрузка данных о вопросах из JSON-файла
+        List<QuestionData> questions = JsonUtil.loadQuestionData();
+        QuestionData questionData = questions.get(questionIndex);
+
+        // Создание и настройка сообщения для редактирования
+        EditMessageText message = new EditMessageText();
+        message.setChatId(String.valueOf(chatId));
+        message.setText(questionData.getQuestion());
+        message.setMessageId((int) messageId);
+
+        // Создание клавиатуры
+        InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+
+        // Добавление кнопок для вопроса
+        for (Button button : questionData.getButtons()) {
+            rowsInline.add(createKeyboardRow(button));
+        }
+
+        // Добавление кнопок для возврата
+        for (Button button : questionData.getBackButtons()) {
+            rowsInline.add(createKeyboardRow(button));
+        }
+
+        markupInline.setKeyboard(rowsInline);
+        message.setReplyMarkup(markupInline);
+
+        // Отправка сообщения
+        exe(message);
+    }
+
+    // Вспомогательный метод для создания строки клавиатуры из кнопки
+    private List<InlineKeyboardButton> createKeyboardRow(Button button) {
+        InlineKeyboardButton inlineButton = new InlineKeyboardButton();
+        inlineButton.setText(button.getText());
+        inlineButton.setCallbackData(button.getData());
+        return List.of(inlineButton);
+    }
+
+
+
+    @Getter
+    public static class QuestionData {
+        private String question;
+        private List<Button> buttons;
+        private List<Button> backButtons;
+
+        public void setQuestion(String question) {
+            this.question = question;
+        }
+
+        public void setButtons(List<Button> buttons) {
+            this.buttons = buttons;
+        }
+
+        public void setBackButtons(List<Button> backButtons) {
+            this.backButtons = backButtons;
+        }
+    }
+
+    @Getter
+    public static class Button {
+        private String text;
+        private String data;
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
+        public void setData(String data) {
+            this.data = data;
+        }
+    }
+
+    public class JsonUtil {
+        private static final String JSON_FILE = "src/main/resources/questions.json";
+
+        public static List<QuestionData> loadQuestionData() throws IOException {
+            ObjectMapper mapper = new ObjectMapper();
+            return List.of(mapper.readValue(new File(JSON_FILE), QuestionData[].class));
         }
     }
 }

@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Выбери тот уровень языка, на который, по твоему 1111111111мнению, ты знаешь английский язык",
+    "buttons": [
+      {"text": "Минимальный", "data": "A1A2ENG_BUTTON"},
+      {"text": "Средний", "data": "B1B2ENG_BUTTON"},
+      {"text": "Максимальный", "data": "C1C2ENG_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  }
+]
