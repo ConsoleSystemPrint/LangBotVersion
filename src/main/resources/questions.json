@@ -1,10 +1,601 @@
 [
   {
-    "question": "Выбери тот уровень языка, на который, по твоему 1111111111мнению, ты знаешь английский язык",
+    "question": "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык",
     "buttons": [
       {"text": "Минимальный", "data": "A1A2ENG_BUTTON"},
       {"text": "Средний", "data": "B1B2ENG_BUTTON"},
       {"text": "Максимальный", "data": "C1C2ENG_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык",
+    "buttons": [
+      {"text": "Минимальный", "data": "A1A2GER_BUTTON"},
+      {"text": "Средний", "data": "B1B2GER_BUTTON"},
+      {"text": "Максимальный", "data": "C1C2GER_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выбери тот уровень языка, на который, по твоему мнению, ты знаешь французский язык",
+    "buttons": [
+      {"text": "Минимальный", "data": "A1A2FRE_BUTTON"},
+      {"text": "Средний", "data": "B1B2FRE_BUTTON"},
+      {"text": "Максимальный", "data": "C1C2FRE_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+  {
+    "question": "Выберите правильный ответ в этом диалоге. \n Hello! I’m Susanna. What’s your name?",
+    "buttons": [
+      {"text": "I do Anna", "data": "A1A2ENG11_BUTTON"},
+      {"text": "My name Anna", "data": "A1A2ENG12_BUTTON"},
+      {"text": "My name is Anna", "data": "A1A2ENG13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n My sister's friend is (...) trained teacher.",
+    "buttons": [
+      {"text": "the", "data": "A1A2ENG21_BUTTON"},
+      {"text": "a", "data": "A1A2ENG22_BUTTON"},
+      {"text": "an", "data": "A1A2ENG23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n My parents are rich. That’s (...) new house.",
+    "buttons": [
+      {"text": "our", "data": "A1A2ENG31_BUTTON"},
+      {"text": "mine", "data": "A1A2ENG32_BUTTON"},
+      {"text": "theirs", "data": "A1A2ENG33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n This is the university (...) I studied economics.",
+    "buttons": [
+      {"text": "when", "data": "A1A2ENG41_BUTTON"},
+      {"text": "where", "data": "A1A2ENG42_BUTTON"},
+      {"text": "who", "data": "A1A2ENG43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n Where (...) you go on holiday last year?",
+    "buttons": [
+      {"text": "do", "data": "A1A2ENG51_BUTTON"},
+      {"text": "did", "data": "A1A2ENG52_BUTTON"},
+      {"text": "were", "data": "A1A2ENG53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+
+
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n Please let me (...) the book on the table.",
+    "buttons": [
+      {"text": "put", "data": "B1B2ENG11_BUTTON"},
+      {"text": "to put", "data": "B1B2ENG12_BUTTON"},
+      {"text": "putting", "data": "B1B2ENG13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n She is interested (...) learning Spanish and French.",
+    "buttons": [
+      {"text": "in", "data": "B1B2ENG21_BUTTON"},
+      {"text": "on", "data": "B1B2ENG22_BUTTON"},
+      {"text": "at", "data": "B1B2ENG23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n I am excited (...) my new job next week.",
+    "buttons": [
+      {"text": "start", "data": "B1B2ENG31_BUTTON"},
+      {"text": "to start", "data": "B1B2ENG32_BUTTON"},
+      {"text": "started", "data": "B1B2ENG33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n My brother has been living in Berlin (...) over five years.",
+    "buttons": [
+      {"text": "from", "data": "B1B2ENG41_BUTTON"},
+      {"text": "at", "data": "B1B2ENG42_BUTTON"},
+      {"text": "for", "data": "B1B2ENG43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n I couldn't go to the party because I (...) my project.",
+    "buttons": [
+      {"text": "have finished", "data": "B1B2ENG51_BUTTON"},
+      {"text": "must finish", "data": "B1B2ENG52_BUTTON"},
+      {"text": "had to finish","data": "B1B2ENG53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n She is very good (...) playing the piano.",
+    "buttons": [
+      {"text": "for", "data": "C1C2ENG11_BUTTON"},
+      {"text": "at", "data": "C1C2ENG12_BUTTON"},
+      {"text": "in", "data": "C1C2ENG13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n I am not familiar (...) the new system yet.",
+    "buttons": [
+      {"text": "with", "data": "C1C2ENG21_BUTTON"},
+      {"text": "by", "data": "C1C2ENG22_BUTTON"},
+      {"text": "to", "data": "C1C2ENG23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n I can't believe you (...) the concert last night!",
+    "buttons": [
+      {"text": "missed", "data": "C1C2ENG31_BUTTON"},
+      {"text": "lost", "data": "C1C2ENG32_BUTTON"},
+      {"text": "skip", "data": "C1C2ENG33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n It was (...) she received the news that she had won the award.",
+    "buttons": [
+      {"text": "scarcely", "data": "C1C2ENG41_BUTTON"},
+      {"text": "hardly", "data": "C1C2ENG42_BUTTON"},
+      {"text": "just", "data": "C1C2ENG43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n (...) he considered his options, he made the decision to resign.",
+    "buttons": [
+      {"text": "Although", "data": "C1C2ENG51_BUTTON"},
+      {"text": "Despite", "data": "C1C2ENG52_BUTTON"},
+      {"text": "Nevertheless", "data": "C1C2ENG53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n Vervollständige den Satz: Ich (…) gut.",
+    "buttons": [
+      {"text": "ist", "data": "A1A2GER11_BUTTON"},
+      {"text": "bin", "data": "A1A2GER12_BUTTON"},
+      {"text": "bist", "data": "A1A2GER13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n Setze das richtige Wort ein: Wir gehen (...)",
+    "buttons": [
+      {"text": "schwimmen", "data": "A1A2GER21_BUTTON"},
+      {"text": "schwimmst", "data": "A1A2GER22_BUTTON"},
+      {"text": "schwimmt", "data": "A1A2GER23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n Welches Wort passt? Sie (...) Lehrerin",
+    "buttons": [
+      {"text": "bin", "data": "A1A2GER31_BUTTON"},
+      {"text": "sind", "data": "A1A2GER32_BUTTON"},
+      {"text": "ist", "data": "A1A2GER33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите вариант ответа, который должен стоять на месте скобок. \n Wann bist du (...) Berlin gekommen?",
+    "buttons": [
+      {"text": "in", "data": "A1A2GER41_BUTTON"},
+      {"text": "nach", "data": "A1A2GER42_BUTTON"},
+      {"text": "auf", "data": "A1A2GER43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Образуйте причастие от слова machen.",
+    "buttons": [
+      {"text": "gemacht", "data": "A1A2GER51_BUTTON"},
+      {"text": "machtest", "data": "A1A2GER52_BUTTON"
+      },
+      {"text": "macht", "data": "A1A2GER53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+  {
+    "question": "Как правильно использовать слово в этом предложении? \n Ich bin (...) in die Stadt gegangen.",
+    "buttons": [
+      {"text": "gern", "data": "B1B2GER11_BUTTON"},
+      {"text": "oft", "data": "B1B2GER12_BUTTON"},
+      {"text": "allein", "data": "B1B2GER13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какое выражение используется для выражения своего мнения на счет чего-либо?",
+    "buttons": [
+      {"text": "Ich denke, dass", "data": "B1B2GER21_BUTTON"},
+      {"text": "Es scheint mir, dass", "data": "B1B2GER22_BUTTON"},
+      {"text": "Mir gefällt, dass", "data": "B1B2GER23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какое слово подходит в этом контексте \n Am Wochenende (...) ich gerne ins Kino.",
+    "buttons": [
+      {"text": "gehe", "data": "B1B2GER31_BUTTON"},
+      {"text": "geht", "data": "B1B2GER32_BUTTON"
+      },
+      {"text": "gehen", "data": "B1B2GER33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какой предлог используется с глаголом warten в значении ждать кого-то?",
+    "buttons": [
+      {"text": "an", "data": "B1B2GER41_BUTTON"},
+      {"text": "auf", "data": "B1B2GER42_BUTTON"},
+      {"text": "vor", "data": "B1B2GER43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какая форма причастия употребляется в составе сложного прошедшего времени с глаголом haben?",
+    "buttons": [
+      {"text": "Partizip I", "data": "B1B2GER51_BUTTON"},
+      {"text": "Partizip II", "data": "B1B2GER52_BUTTON"},
+      {"text": "Partizip III", "data": "B1B2GER53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+  {
+    "question": "Какая форма глагола используется в сослагательном наклонении во времени Praeteritum Perfekt?",
+    "buttons": [
+      {"text": "Konjunktiv I", "data": "C1C2GER11_BUTTON"},
+      {"text": "Konjunktiv II", "data": "C1C2GER12_BUTTON"},
+      {"text": "Konjunktiv III", "data": "C1C2GER13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какой из следующих случаев употребления Konjunktiv I является правильным?",
+    "buttons": [
+      {"text": "Zum Ausdruck von Möglichkeiten und Annahmen", "data": "C1C2GER21_BUTTON"},
+      {"text": "Für indirekte Rede", "data": "C1C2GER22_BUTTON"},
+      {"text": "Im Alltag für die Höflichkeitsformen", "data": "C1C2GER23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какое слово использовать в этом предложении? \n Es war (...) Niederlage, aber sie hat tapfer gekämpft.",
+    "buttons": [
+      {"text": "keine", "data": "C1C2GER31_BUTTON"},
+      {"text": "irgendeine", "data": "C1C2GER32_BUTTON"},
+      {"text": "eine", "data": "C1C2GER33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какой падеж используется после предлога wegen?",
+    "buttons": [
+      {"text": "Dativ", "data": "C1C2GER41_BUTTON"},
+      {"text": "Akkusativ", "data": "C1C2GER42_BUTTON"},
+      {"text": "Genitiv", "data": "C1C2GER43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какая форма времени Kant haben Plusquamperfekt состоит из глагола haben и причастия II основного глагола?",
+    "buttons": [
+      {"text": "Konditional II", "data": "C1C2GER51_BUTTON"},
+      {"text": "Futur II", "data": "C1C2GER52_BUTTON"},
+      {"text": "Konjunktiv II", "data": "C1C2GER53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+  {
+    "question": "Выберите правильный цвет. \n Quelle est la couleur du ciel?",
+    "buttons": [
+      {"text": "bleu", "data": "A1A2FRE11_BUTTON"},
+      {"text": "rouge", "data": "A1A2FRE12_BUTTON"},
+      {"text": "jaune", "data": "A1A2FRE13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите правильную форму будущего времени глагола aller. \n Qu'est-ce que tu vas faire ce weekend?",
+    "buttons": [
+      {"text": "Je aller au cinéma", "data": "A1A2FRE21_BUTTON"},
+      {"text": "Je vais au cinéma", "data": "A1A2FRE22_BUTTON"},
+      {"text": "Je vais à la cinéma", "data": "A1A2FRE23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите правильное местоположение. \n Où est la bibliothèque?",
+    "buttons": [
+      {"text": "à gauche", "data": "A1A2FRE31_BUTTON"},
+      {"text": "à droite", "data": "A1A2FRE32_BUTTON"},
+      {"text": "derrière", "data": "A1A2FRE33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите правильное описание погоды. \n Quel temps fait-il aujourd'hui?",
+    "buttons": [
+      {"text": "Il fait froid", "data": "A1A2FRE41_BUTTON"},
+      {"text": "Il faire froid", "data": "A1A2FRE42_BUTTON"},
+      {"text": "Il fait chaud", "data": "A1A2FRE43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите правильное количество. \n Combien de frères et de sœurs as-tu?",
+    "buttons": [
+      {"text": "J'ai trois sœurs", "data": "A1A2FRE51_BUTTON"},
+      {"text": "J'ai six frères", "data": "A1A2FRE52_BUTTON"},
+      {"text": "J'ai un frère et une sœur", "data": "A1A2FRE53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+  {
+    "question": "Выберите правильное слово для заполнения пропуска. \n Utilisez le mot correctement dans la phrase : Je suis allé au cinéma (...) regarder un film",
+    "buttons": [
+      {"text": "pour", "data": "B1B2FRE11_BUTTON"},
+      {"text": "à", "data": "B1B2FRE12_BUTTON"},
+      {"text": "pour", "data": "B1B2FRE13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите правильное предлог для завершения фразы. \n Elle est arrivée à Paris il y a deux semaines",
+    "buttons": [
+      {"text": "à", "data": "B1B2FRE21_BUTTON"},
+      {"text": "de", "data": "B1B2FRE22_BUTTON"},
+      {"text": "dans", "data": "B1B2FRE23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Согласуйте глагол partir в будущем времени для nous.",
+    "buttons": [
+      {"text": "partira", "data": "B1B2FRE31_BUTTON"},
+      {"text": "partirez", "data": "B1B2FRE32_BUTTON"},
+      {"text": "partirons", "data": "B1B2FRE33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Найдите женский род к слову grand.",
+    "buttons": [
+      {"text": "grandeur", "data": "B1B2FRE41_BUTTON"},
+      {"text": "grande", "data": "B1B2FRE42_BUTTON"},
+      {"text": "grandement", "data": "B1B2FRE43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Выберите правильную форму настоящего сослагательного наклонения глагола être для множественного числа.",
+    "buttons": [
+      {"text": "soyons", "data": "B1B2FRE51_BUTTON"},
+      {"text": "sommes", "data": "B1B2FRE52_BUTTON"},
+      {"text": "soient", "data": "B1B2FRE53_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+
+
+  {
+    "question": "Какое слово использовать в этом предложении: \n l est important de (...) attention à ce que tu dis.",
+    "buttons": [
+      {"text": "faire", "data": "C1C2FRE11_BUTTON"},
+      {"text": "mettre", "data": "C1C2FRE12_BUTTON"},
+      {"text": "porter", "data": "C1C2FRE13_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какой из представленных времен употребляется для описания действия, которое происходило до другого прошедшего момента времени?",
+    "buttons": [
+      {"text": "Le passé composé", "data": "C1C2FRE21_BUTTON"},
+      {"text": "L'imparfait", "data": "C1C2FRE22_BUTTON"},
+      {"text": "Le plus-que-parfait", "data": "C1C2FRE23_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какое слово подходит в этом контексте: \n Je (...) eu l'occasion de visiter Paris plusieurs fois.",
+    "buttons": [
+      {"text": "suis", "data": "C1C2FRE31_BUTTON"},
+      {"text": "ai", "data": "C1C2FRE32_BUTTON"},
+      {"text": "avais", "data": "C1C2FRE33_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какое выражение используется для описания события, которое могло произойти, но не случилось?",
+    "buttons": [
+      {"text": "Si j'avais su", "data": "C1C2FRE41_BUTTON"},
+      {"text": "Si je savais", "data": "C1C2FRE42_BUTTON"},
+      {"text": "Si j'ai su", "data": "C1C2FRE43_BUTTON"}
+    ],
+    "backButtons": [
+      {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},
+      {"text": "Вернуться к выбору уровня языка", "data": "BACKLEVELENG_BUTTON"}
+    ]
+  },
+  {
+    "question": "Какой из следующих видов сослагательного наклонения правильно описывает предположение или желание в настоящем времени?",
+    "buttons": [
+      {"text": "Le subjonctif imparfait", "data": "C1C2FRE51_BUTTON"},
+      {"text": "Le subjonctif présent", "data": "C1C2FRE52_BUTTON"},
+      {"text": "Le subjonctif passé", "data": "C1C2FRE53_BUTTON"}
     ],
     "backButtons": [
       {"text": "Вернуться к выбору языка", "data": "BACKLANG1_BUTTON"},

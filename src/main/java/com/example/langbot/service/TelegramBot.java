@@ -78,12 +78,9 @@ public class TelegramBot extends TelegramLongPollingBot
             long chatId = update.getCallbackQuery().getMessage().getChatId();
             if(callbackData.equals("ENG_BUTTON"))
             {
-//                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь английский язык",
-//                        "Минимальный", "A1A2ENG_BUTTON", "Средний", "B1B2ENG_BUTTON",
-//                        "Максимальный", "C1C2ENG_BUTTON", chatId, messageId);
                 try {
                     // Допустим, questionIndex = 0 для первого вопроса в JSON
-                    Lang33(0, chatId, messageId);
+                    Lang(0, chatId, messageId);
                 } catch (IOException e) {
                     e.printStackTrace();
                     System.out.println("Ошибка JSON: " + e.getMessage());
@@ -91,24 +88,46 @@ public class TelegramBot extends TelegramLongPollingBot
             }
             if(callbackData.equals("GER_BUTTON"))
             {
-                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык",
-                        "Минимальный", "A1A2GER_BUTTON", "Средний", "B1B2GER_BUTTON",
-                        "Максимальный", "C1C2GER_BUTTON", chatId, messageId);
+//                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь немецкий язык",
+//                        "Минимальный", "A1A2GER_BUTTON", "Средний", "B1B2GER_BUTTON",
+//                        "Максимальный", "C1C2GER_BUTTON", chatId, messageId);
+
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(1, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("FRE_BUTTON"))
             {
-                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь французский язык",
-                        "Минимальный", "A1A2FRE_BUTTON", "Средний", "B1B2FRE_BUTTON",
-                        "Максимальный", "C1C2FRE_BUTTON", chatId, messageId);
+//                Lang1("Выбери тот уровень языка, на который, по твоему мнению, ты знаешь французский язык",
+//                        "Минимальный", "A1A2FRE_BUTTON", "Средний", "B1B2FRE_BUTTON",
+//                        "Максимальный", "C1C2FRE_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(2, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
 
             if(callbackData.equals("A1A2ENG_BUTTON"))
             {
                 a = 0;
                 b = 0;
-                Lang("Выберите правильный ответ в этом диалоге. \n Hello! I’m Susanna. What’s your name?",
-                        "I do Anna", "A1A2ENG11_BUTTON", "My name Anna", "A1A2ENG12_BUTTON",
-                        "My name is Anna", "A1A2ENG13_BUTTON", chatId, messageId);
+//                Lang("Выберите правильный ответ в этом диалоге. \n Hello! I’m Susanna. What’s your name?",
+//                        "I do Anna", "A1A2ENG11_BUTTON", "My name Anna", "A1A2ENG12_BUTTON",
+//                        "My name is Anna", "A1A2ENG13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(3, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2ENG11_BUTTON") || callbackData.equals("A1A2ENG12_BUTTON") || callbackData.equals("A1A2ENG13_BUTTON"))
             {
@@ -116,9 +135,16 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My sister's friend is (...) trained teacher.",
-                        "the", "A1A2ENG21_BUTTON", "a", "A1A2ENG22_BUTTON",
-                        "an", "A1A2ENG23_BUTTON", chatId, messageId);
+//                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My sister's friend is (...) trained teacher.",
+//                        "the", "A1A2ENG21_BUTTON", "a", "A1A2ENG22_BUTTON",
+//                        "an", "A1A2ENG23_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(4, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
 
             if(callbackData.equals("A1A2ENG21_BUTTON") || callbackData.equals("A1A2ENG22_BUTTON") || callbackData.equals("A1A2ENG23_BUTTON"))
@@ -127,9 +153,16 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     b += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My parents are rich. That’s (...) new house.",
-                        "our", "A1A2ENG31_BUTTON", "mine", "A1A2ENG32_BUTTON",
-                        "theirs", "A1A2ENG33_BUTTON", chatId, messageId);
+//                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My parents are rich. That’s (...) new house.",
+//                        "our", "A1A2ENG31_BUTTON", "mine", "A1A2ENG32_BUTTON",
+//                        "theirs", "A1A2ENG33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(5, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2ENG31_BUTTON") || callbackData.equals("A1A2ENG32_BUTTON") || callbackData.equals("A1A2ENG33_BUTTON"))
             {
@@ -137,9 +170,16 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n This is the university (...) i studied economics.",
-                        "when", "A1A2ENG41_BUTTON", "where", "A1A2ENG42_BUTTON",
-                        "who", "A1A2ENG43_BUTTON", chatId, messageId);
+//                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n This is the university (...) i studied economics.",
+//                        "when", "A1A2ENG41_BUTTON", "where", "A1A2ENG42_BUTTON",
+//                        "who", "A1A2ENG43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(6, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2ENG41_BUTTON") || callbackData.equals("A1A2ENG42_BUTTON") || callbackData.equals("A1A2ENG43_BUTTON"))
             {
@@ -149,9 +189,16 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (a == b && a != 0 && b != 0)
                 {
-                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Where (...) you go on holiday last year?",
-                            "do", "A1A2ENG51_BUTTON", "did", "A1A2ENG52_BUTTON",
-                            "were", "A1A2ENG53_BUTTON", chatId, messageId);
+//                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Where (...) you go on holiday last year?",
+//                            "do", "A1A2ENG51_BUTTON", "did", "A1A2ENG52_BUTTON",
+//                            "were", "A1A2ENG53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(7, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (a == 0 && b == 0)
                 {
@@ -183,9 +230,13 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 c = 0;
                 d = 0;
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Please let me (...) the book on the table.",
-                        "put", "B1B2ENG11_BUTTON", "to put", "B1B2ENG12_BUTTON",
-                        "putting", "B1B2ENG13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(8, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2ENG11_BUTTON") || callbackData.equals("B1B2ENG12_BUTTON") || callbackData.equals("B1B2ENG13_BUTTON"))
             {
@@ -193,9 +244,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n She is interested (...) learning Spanish and French.",
-                        "in", "B1B2ENG21_BUTTON", "on", "B1B2ENG22_BUTTON",
-                        "at", "B1B2ENG23_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(9, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2ENG21_BUTTON") || callbackData.equals("B1B2ENG22_BUTTON") || callbackData.equals("B1B2ENG23_BUTTON"))
             {
@@ -203,9 +258,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     d += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I am excited (...) my new job next week.",
-                        "start", "B1B2ENG31_BUTTON", "to start", "B1B2ENG32_BUTTON",
-                        "started", "B1B2ENG33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(10, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2ENG31_BUTTON") || callbackData.equals("B1B2ENG32_BUTTON") || callbackData.equals("B1B2ENG33_BUTTON"))
             {
@@ -213,9 +272,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n My brother has been living in Berlin (...) over five years.",
-                        "from", "B1B2ENG41_BUTTON", "at", "B1B2ENG42_BUTTON",
-                        "for", "B1B2ENG43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(11, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2ENG41_BUTTON") || callbackData.equals("B1B2ENG42_BUTTON") || callbackData.equals("B1B2ENG43_BUTTON"))
             {
@@ -225,9 +288,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (c == d && c != 0 && d != 0)
                 {
-                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I couldn't go to the party because I (...) my project.",
-                            "have finished", "B1B2ENG51_BUTTON", "must finish", "B1B2ENG52_BUTTON",
-                            "had to finish", "B1B2ENG53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(12, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (c == 0 && d == 0)
                 {
@@ -260,9 +327,13 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 i = 0;
                 f = 0;
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n She is very good (...) playing the piano.",
-                        "for", "C1C2ENG11_BUTTON", "at", "C1C2ENG12_BUTTON",
-                        "in", "C1C2ENG13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(13, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2ENG11_BUTTON") || callbackData.equals("C1C2ENG12_BUTTON") || callbackData.equals("C1C2ENG13_BUTTON"))
             {
@@ -270,9 +341,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I am not familiar (...) the new system yet.",
-                        "with", "C1C2ENG21_BUTTON", "by", "C1C2ENG22_BUTTON",
-                        "to", "C1C2ENG23_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(14, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2ENG21_BUTTON") || callbackData.equals("C1C2ENG22_BUTTON") || callbackData.equals("C1C2ENG23_BUTTON"))
             {
@@ -281,9 +356,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     f += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n I can't believe you (...) the concert last night!",
-                        "missed", "C1C2ENG31_BUTTON", "lost", "C1C2ENG32_BUTTON",
-                        "skip", "C1C2ENG33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(15, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2ENG31_BUTTON") || callbackData.equals("C1C2ENG32_BUTTON") || callbackData.equals("C1C2ENG33_BUTTON"))
             {
@@ -291,9 +370,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n It was (...) she received the news that she had won the award.",
-                        "scarcely", "C1C2ENG41_BUTTON", "hardly", "C1C2ENG42_BUTTON",
-                        "just", "C1C2ENG43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(16, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2ENG41_BUTTON") || callbackData.equals("C1C2ENG42_BUTTON") || callbackData.equals("C1C2ENG43_BUTTON"))
             {
@@ -303,9 +386,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (i == f && i != 0 && f != 0)
                 {
-                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n (...) he considered his options, he made the decision to resign.",
-                            "Although", "C1C2ENG51_BUTTON", "Despite", "C1C2ENG52_BUTTON",
-                            "Nevertheless", "C1C2ENG53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(17, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (i == 0 && f == 0)
                 {
@@ -337,9 +424,13 @@ public class TelegramBot extends TelegramLongPollingBot
             if(callbackData.equals("A1A2GER_BUTTON"))
             {
                 a1 = 0; b1 = 0;
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Vervollständige den Satz: Ich (…) gut.",
-                        "ist", "A1A2GER11_BUTTON", "bin", "A1A2GER12_BUTTON",
-                        "bist", "A1A2GER13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(18, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
 
             if(callbackData.equals("A1A2GER11_BUTTON") || callbackData.equals("A1A2GER12_BUTTON") || callbackData.equals("A1A2GER13_BUTTON")) {
@@ -348,9 +439,13 @@ public class TelegramBot extends TelegramLongPollingBot
                     a1 += 1 ;
                 }
                 {
-                    Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Setze das richtige Wort ein: Wir gehen (...)",
-                            "schwimmen", "A1A2GER21_BUTTON", "schwimmst", "A1A2GER22_BUTTON",
-                            "schwimmt", "A1A2GER23_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(19, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
             }
             if(callbackData.equals("A1A2GER21_BUTTON") || callbackData.equals("A1A2GER22_BUTTON") || callbackData.equals("A1A2GER23_BUTTON"))
@@ -360,9 +455,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     b1 += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Welches Wort passt? Sie (...) Lehrerin",
-                        "bin", "A1A2GER31_BUTTON", "sind", "A1A2GER32_BUTTON",
-                        "ist", "A1A2GER33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(20, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2GER31_BUTTON") || callbackData.equals("A1A2GER32_BUTTON") || callbackData.equals("A1A2GER33_BUTTON"))
             {
@@ -370,9 +469,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a1 += 1;
                 }
-                Lang("Выберите вариант ответа, который должен стоять на месте скобок. \n Wann bist du (...) Berlin gekommen?",
-                        "in", "A1A2GER41_BUTTON", "nach", "A1A2GER42_BUTTON",
-                        "auf", "A1A2GER43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(21, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2GER41_BUTTON") || callbackData.equals("A1A2GER42_BUTTON") || callbackData.equals("A1A2GER43_BUTTON"))
             {
@@ -382,9 +485,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (a1 == b1 && a1 != 0 && b1 != 0)
                 {
-                    Lang("Образуйте причастие от слова machen.",
-                            "gemacht", "A1A2GER51_BUTTON", "machtest", "A1A2GER52_BUTTON",
-                            "macht", "A1A2GER53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(22, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (a1 == 0 && b1 == 0)
                 {
@@ -415,9 +522,13 @@ public class TelegramBot extends TelegramLongPollingBot
             if(callbackData.equals("B1B2GER_BUTTON"))
             {
                 c1 = 0; d1 = 0;
-                Lang("Как правильно использовать слово в этом предложении? \n Ich bin (...) in die Stadt gegangen.",
-                        "gern", "B1B2GER11_BUTTON", "oft", "B1B2GER12_BUTTON",
-                        "allein", "B1B2GER13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(23, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
 
             if(callbackData.equals("B1B2GER11_BUTTON") || callbackData.equals("B1B2GER12_BUTTON") || callbackData.equals("B1B2GER13_BUTTON"))
@@ -427,9 +538,13 @@ public class TelegramBot extends TelegramLongPollingBot
                     c1 += 1 ;
                 }
                 {
-                    Lang("Какое выражение используется для выражения своего мнения на счет чего-либо?",
-                            "Ich denke, dass", "B1B2GER21_BUTTON", "Es scheint mir, dass", "B1B2GER22_BUTTON",
-                            "Mir gefällt, dass", "B1B2GER23_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(24, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
             }
             if(callbackData.equals("B1B2GER21_BUTTON") || callbackData.equals("B1B2GER22_BUTTON") || callbackData.equals("B1B2GER23_BUTTON"))
@@ -438,9 +553,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     d1 += 1;
                 }
-                Lang("Какое слово подходит в этом контексте \n Am Wochenende (...) ich gerne ins Kino.",
-                        "gehe", "B1B2GER31_BUTTON", "geht", "B1B2GER32_BUTTON",
-                        "gehen", "B1B2GER33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(25, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2GER31_BUTTON") || callbackData.equals("B1B2GER32_BUTTON") || callbackData.equals("B1B2GER33_BUTTON"))
             {
@@ -448,9 +567,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c1 += 1;
                 }
-                Lang("Какой предлог используется с глаголом warten в значении ждать кого-то?",
-                        "an", "B1B2GER41_BUTTON", "auf", "B1B2GER42_BUTTON",
-                        "vor", "B1B2GER43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(26, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2GER41_BUTTON") || callbackData.equals("B1B2GER42_BUTTON") || callbackData.equals("B1B2GER43_BUTTON"))
             {
@@ -460,9 +583,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (c1 == d1 && c1 != 0 && d1 != 0)
                 {
-                    Lang("Какая форма причастия употребляется в составе сложного прошедшего времени с глаголом haben?",
-                            "Partizip I", "B1B2GER51_BUTTON", "Partizip II", "B1B2GER52_BUTTON",
-                            "Partizip III", "B1B2GER53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(27, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (c1 == 0 && d1 == 0)
                 {
@@ -493,9 +620,13 @@ public class TelegramBot extends TelegramLongPollingBot
             if(callbackData.equals("C1C2GER_BUTTON"))
             {
                 i1 = 0; f1 = 0;
-                Lang("Какая форма глагола используется в сослагательном наклонении во времени Praeteritum Perfekt?",
-                        "Konjunktiv I", "C1C2GER11_BUTTON", "Konjunktiv II", "C1C2GER12_BUTTON",
-                        "Konjunktiv III", "C1C2GER13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(28, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
 
             if(callbackData.equals("C1C2GER11_BUTTON") || callbackData.equals("C1C2GER12_BUTTON") || callbackData.equals("C1C2GER13_BUTTON"))
@@ -505,9 +636,13 @@ public class TelegramBot extends TelegramLongPollingBot
                     i1 += 1 ;
                 }
                 {
-                    Lang("Какой из следующих случаев употребления Konjunktiv I является правильным?",
-                            "Zum Ausdruck von Möglichkeiten und Annahmen", "C1C2GER21_BUTTON", "Für indirekte Rede", "C1C2GER22_BUTTON",
-                            "Im Alltag für die Höflichkeitsformen", "C1C2GER23_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(29, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
             }
             if(callbackData.equals("C1C2GER21_BUTTON") || callbackData.equals("C1C2GER22_BUTTON") || callbackData.equals("C1C2GER23_BUTTON"))
@@ -517,9 +652,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     f1 += 1;
                 }
-                Lang("Какое слово использовать в этом предложении? \n As war (...) Niederlage, aber sie hat tapfer gekämpft.",
-                        "keine", "C1C2GER31_BUTTON", "irgendeine", "C1C2GER32_BUTTON",
-                        "eine", "C1C2GER33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(30, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2GER31_BUTTON") || callbackData.equals("C1C2GER32_BUTTON") || callbackData.equals("C1C2GER33_BUTTON"))
             {
@@ -527,9 +666,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i1 += 1;
                 }
-                Lang("Какой падеж используется после предлога wegen?",
-                        "Dativ", "C1C2GER41_BUTTON", "Akkusativ", "C1C2GER42_BUTTON",
-                        "Genitiv", "C1C2GER43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(31, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2GER41_BUTTON") || callbackData.equals("C1C2GER42_BUTTON") || callbackData.equals("C1C2GER43_BUTTON"))
             {
@@ -539,9 +682,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (i1 == f1 && i1 != 0 && f1 != 0)
                 {
-                    Lang("Какая форма времени Kant haben Plusquamperfekt состоит из глагола haben и причастия II основного глагола?",
-                            "Konditional II", "C1C2GER51_BUTTON", "Futur II", "C1C2GER52_BUTTON",
-                            "Konjunktiv II", "C1C2GER53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(32, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (i1 == 0 && f1 == 0)
                 {
@@ -574,9 +721,13 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 a2 = 0;
                 b2 = 0;
-                Lang("Выберите правильный цвет. \n Quelle est la couleur du ciel?",
-                        "bleu", "A1A2FRE11_BUTTON", "rouge", "A1A2FRE12_BUTTON",
-                        "jaune", "A1A2FRE13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(33, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2FRE11_BUTTON") || callbackData.equals("A1A2FRE12_BUTTON") || callbackData.equals("A1A2FRE13_BUTTON"))
             {
@@ -584,9 +735,14 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a2 += 1;
                 }
-                Lang("Выберите правильную форму будущего времени глагола aller. \n Qu'est-ce que tu vas faire ce weekend?",
-                        "Je aller au cinéma", "A1A2FRE21_BUTTON", "e vais au cinéma", "A1A2FRE22_BUTTON",
-                        "Je vais à la cinéma", "A1A2FRE23_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(34, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
+
             }
             if(callbackData.equals("A1A2FRE21_BUTTON") || callbackData.equals("A1A2FRE22_BUTTON") || callbackData.equals("A1A2FRE23_BUTTON"))
             {
@@ -594,9 +750,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     b2 += 1;
                 }
-                Lang("Выберите правильное местоположение. \n Où est la bibliothèque?",
-                        "à gauche", "A1A2FRE31_BUTTON", "à droite", "A1A2FRE32_BUTTON",
-                        "derrière", "A1A2FRE33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(35, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2FRE31_BUTTON") || callbackData.equals("A1A2FRE32_BUTTON") || callbackData.equals("A1A2FRE33_BUTTON"))
             {
@@ -604,9 +764,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     a2 += 1;
                 }
-                Lang("Выберите правильное описание погоды. \n Quel temps fait-il aujourd'hui?",
-                        "Il fait froid", "A1A2FRE41_BUTTON", "Il faire froid", "A1A2FRE42_BUTTON",
-                        "Il fait chaud", "A1A2FRE43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(36, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("A1A2FRE41_BUTTON") || callbackData.equals("A1A2FRE42_BUTTON") || callbackData.equals("A1A2FRE43_BUTTON"))
             {
@@ -616,9 +780,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (a2 == b2 && a2 != 0 && b2 != 0)
                 {
-                    Lang("Выберите правильное количество. \n Combien de frères et de sœurs as-tu?",
-                            "J'ai trois sœurs", "A1A2FRE51_BUTTON", "J'ai six frères", "A1A2FRE52_BUTTON",
-                            "J'ai un frère et une sœur", "A1A2FRE53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(37, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (a2 == 0 && b2 == 0)
                 {
@@ -651,9 +819,13 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 c2 = 0;
                 d2 = 0;
-                Lang("Выберите правильное слово для заполнения пропуска. \n Utilisez le mot correctement dans la phrase : Je suis allé au cinéma (...) regarder un film",
-                        "pour", "B1B2FRE11_BUTTON", "à", "B1B2FRE12_BUTTON",
-                        "pour", "B1B2FRE13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(38, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2FRE11_BUTTON") || callbackData.equals("B1B2FRE12_BUTTON") || callbackData.equals("B1B2FRE13_BUTTON"))
             {
@@ -661,9 +833,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c2 += 1;
                 }
-                Lang("Выберите правильное предлог для завершения фразы. \n Elle est arrivée  Paris il y a deux semaines",
-                        "à", "B1B2FRE21_BUTTON", "de", "B1B2FRE22_BUTTON",
-                        "dans", "B1B2FRE23_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(39, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2FRE21_BUTTON") || callbackData.equals("B1B2FRE22_BUTTON") || callbackData.equals("B1B2FRE23_BUTTON"))
             {
@@ -671,9 +847,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     d2 += 1;
                 }
-                Lang("Согласуйте глагол partir в будущем времени для нous.",
-                        "partira", "B1B2FRE31_BUTTON", "partirez", "B1B2FRE32_BUTTON",
-                        "partirons", "B1B2FRE33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(40, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2FRE31_BUTTON") || callbackData.equals("B1B2FRE32_BUTTON") || callbackData.equals("B1B2FRE33_BUTTON"))
             {
@@ -681,9 +861,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     c2 += 1;
                 }
-                Lang("айдите женский род к слову grand.",
-                        "grandeur", "B1B2FRE41_BUTTON", "grande", "B1B2FRE42_BUTTON",
-                        "grandement", "B1B2FRE43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(41, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("B1B2FRE41_BUTTON") || callbackData.equals("B1B2FRE42_BUTTON") || callbackData.equals("B1B2FRE43_BUTTON"))
             {
@@ -693,9 +877,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (c2 == d2 && c2 != 0 && d2 != 0)
                 {
-                    Lang("Выберите правильную форму настоящего сослагательного наклонения глагола être для множественного числа.",
-                            "soyons", "B1B2FRE51_BUTTON", "sommes", "B1B2FRE52_BUTTON",
-                            "soient", "B1B2FRE53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(42, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (c2 == 0 && d2 == 0)
                 {
@@ -727,9 +915,13 @@ public class TelegramBot extends TelegramLongPollingBot
             {
                 i2 = 0;
                 f2 = 0;
-                Lang("Какое слово использовать в этом предложении: \n l est important de (...) attention à ce que tu dis.",
-                        "faire", "C1C2FRE11_BUTTON", "mettre", "C1C2FRE12_BUTTON",
-                        "porter", "C1C2FRE13_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(43, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2FRE11_BUTTON") || callbackData.equals("C1C2FRE12_BUTTON") || callbackData.equals("C1C2FRE13_BUTTON"))
             {
@@ -737,9 +929,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i2 += 1;
                 }
-                Lang("Какой из представленных времен употребляется для описания действия, которое происходило до другого прошедшего момента времени?",
-                        "Le passé composé", "C1C2FRE21_BUTTON", "L'imparfait", "C1C2FRE22_BUTTON",
-                        "Le plus-que-parfait", "C1C2FRE23_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(44, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2FRE21_BUTTON") || callbackData.equals("C1C2FRE22_BUTTON") || callbackData.equals("C1C2FRE23_BUTTON"))
             {
@@ -747,9 +943,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     f2 += 1;
                 }
-                Lang("Какое слово подходит в этом контексте: \n Je (...) eu l'occasion de visiter Paris plusieurs fois.",
-                        "suis", "C1C2FRE31_BUTTON", "ai", "C1C2FRE32_BUTTON",
-                        "avais", "C1C2FRE33_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(45, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2FRE31_BUTTON") || callbackData.equals("C1C2FRE32_BUTTON") || callbackData.equals("C1C2FRE33_BUTTON"))
             {
@@ -757,9 +957,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 {
                     i2 += 1;
                 }
-                Lang("Какое выражение используется для описания события, которое могло произойти, но не случилось?",
-                        "Si j'avais su", "C1C2FRE41_BUTTON", "Si je savais", "C1C2FRE42_BUTTON",
-                        "Si j'ai su", "C1C2FRE43_BUTTON", chatId, messageId);
+                try {
+                    // Допустим, questionIndex = 0 для первого вопроса в JSON
+                    Lang(46, chatId, messageId);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Ошибка JSON: " + e.getMessage());
+                }
             }
             if(callbackData.equals("C1C2FRE41_BUTTON") || callbackData.equals("C1C2FRE42_BUTTON") || callbackData.equals("C1C2FRE43_BUTTON"))
             {
@@ -769,9 +973,13 @@ public class TelegramBot extends TelegramLongPollingBot
                 }
                 if (i2 == f2 && i2 != 0 && f2 != 0)
                 {
-                    Lang("Какой из следующих видов сослагательного наклонения правильно описывает предположение или желание в настоящем времени?",
-                            "Le subjonctif imparfait", "C1C2FRE51_BUTTON", "Le subjonctif présent", "C1C2FRE52_BUTTON",
-                            "Le subjonctif passé", "C1C2FRE53_BUTTON", chatId, messageId);
+                    try {
+                        // Допустим, questionIndex = 0 для первого вопроса в JSON
+                        Lang(47, chatId, messageId);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("Ошибка JSON: " + e.getMessage());
+                    }
                 }
                 if (i2 == 0 && f2 == 0)
                 {
@@ -906,48 +1114,48 @@ public class TelegramBot extends TelegramLongPollingBot
             System.out.println("error" + e.getMessage());
         }
     }
-    public void Lang(String text, String s1, String data1, String s2, String data2, String s3, String data3, long chatId, long messageId)
-    {
-        EditMessageText message = new EditMessageText();
-        message.setChatId(String.valueOf(chatId));
-        message.setText(text);
-        System.out.println( message.getText());
-
-        message.setMessageId((int) messageId);
-        InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-        List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
-        List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
-        List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
-
-        var customButton1 = new InlineKeyboardButton();
-        customButton1.setText(s1);
-        customButton1.setCallbackData(data1);
-        var customButton2 = new InlineKeyboardButton();
-        customButton2.setText(s2);
-        customButton2.setCallbackData(data2);
-        var customButton3 = new InlineKeyboardButton();
-        customButton3.setText(s3);
-        customButton3.setCallbackData(data3);
-
-        var BACKLANGbutton = new InlineKeyboardButton();
-        BACKLANGbutton.setText("Вернуться к выбору языка");
-        BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
-        var BACKLEVELENGbutton = new InlineKeyboardButton();
-        BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
-        BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
-
-        rowInline1.add(customButton1);
-        rowInline2.add(customButton2); rowInline3.add(customButton3);
-        rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
-
-        rowsInline.add(rowInline1);
-        rowsInline.add(rowInline2); rowsInline.add(rowInline3);
-        rowsInline.add(rowInline4); rowsInline.add(rowInline5);
-
-        markupInline.setKeyboard(rowsInline);
-        message.setReplyMarkup(markupInline);
-        exe(message);
-    }
+//    public void Lang(String text, String s1, String data1, String s2, String data2, String s3, String data3, long chatId, long messageId)
+//    {
+//        EditMessageText message = new EditMessageText();
+//        message.setChatId(String.valueOf(chatId));
+//        message.setText(text);
+//        System.out.println( message.getText());
+//
+//        message.setMessageId((int) messageId);
+//        InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+//        List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>(); List<InlineKeyboardButton> rowInline1 = new ArrayList<>();
+//        List<InlineKeyboardButton> rowInline2 = new ArrayList<>(); List<InlineKeyboardButton> rowInline3 = new ArrayList<>();
+//        List<InlineKeyboardButton> rowInline4 = new ArrayList<>(); List<InlineKeyboardButton> rowInline5 = new ArrayList<>();
+//
+//        var customButton1 = new InlineKeyboardButton();
+//        customButton1.setText(s1);
+//        customButton1.setCallbackData(data1);
+//        var customButton2 = new InlineKeyboardButton();
+//        customButton2.setText(s2);
+//        customButton2.setCallbackData(data2);
+//        var customButton3 = new InlineKeyboardButton();
+//        customButton3.setText(s3);
+//        customButton3.setCallbackData(data3);
+//
+//        var BACKLANGbutton = new InlineKeyboardButton();
+//        BACKLANGbutton.setText("Вернуться к выбору языка");
+//        BACKLANGbutton.setCallbackData("BACKLANG1_BUTTON");
+//        var BACKLEVELENGbutton = new InlineKeyboardButton();
+//        BACKLEVELENGbutton.setText("Вернуться к выбору уровня языка");
+//        BACKLEVELENGbutton.setCallbackData("BACKLEVELENG_BUTTON");
+//
+//        rowInline1.add(customButton1);
+//        rowInline2.add(customButton2); rowInline3.add(customButton3);
+//        rowInline4.add(BACKLANGbutton); rowInline5.add(BACKLEVELENGbutton);
+//
+//        rowsInline.add(rowInline1);
+//        rowsInline.add(rowInline2); rowsInline.add(rowInline3);
+//        rowsInline.add(rowInline4); rowsInline.add(rowInline5);
+//
+//        markupInline.setKeyboard(rowsInline);
+//        message.setReplyMarkup(markupInline);
+//        exe(message);
+//    }
     public void Lang1(String text, String s1, String data1, String s2, String data2, String s3, String data3, long chatId, long messageId)
     {
         EditMessageText message = new EditMessageText();
@@ -1005,7 +1213,7 @@ public class TelegramBot extends TelegramLongPollingBot
         }
     }
 
-    public void Lang33(int questionIndex, long chatId, long messageId) throws IOException {
+    public void Lang(int questionIndex, long chatId, long messageId) throws IOException {
         // Загрузка данных о вопросах из JSON-файла
         List<QuestionData> questions = JsonUtil.loadQuestionData();
         QuestionData questionData = questions.get(questionIndex);
