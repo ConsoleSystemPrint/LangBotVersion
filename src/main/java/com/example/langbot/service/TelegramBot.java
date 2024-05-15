@@ -1213,7 +1213,8 @@ public class TelegramBot extends TelegramLongPollingBot
         }
     }
 
-    public void Lang(int questionIndex, long chatId, long messageId) throws IOException {
+    public void Lang(int questionIndex, long chatId, long messageId) throws IOException
+    {
         // Загрузка данных о вопросах из JSON-файла
         List<QuestionData> questions = JsonUtil.loadQuestionData();
         QuestionData questionData = questions.get(questionIndex);
@@ -1229,12 +1230,14 @@ public class TelegramBot extends TelegramLongPollingBot
         List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
 
         // Добавление кнопок для вопроса
-        for (Button button : questionData.getButtons()) {
+        for (Button button : questionData.getButtons())
+        {
             rowsInline.add(createKeyboardRow(button));
         }
 
         // Добавление кнопок для возврата
-        for (Button button : questionData.getBackButtons()) {
+        for (Button button : questionData.getBackButtons())
+        {
             rowsInline.add(createKeyboardRow(button));
         }
 
@@ -1246,17 +1249,17 @@ public class TelegramBot extends TelegramLongPollingBot
     }
 
     // Вспомогательный метод для создания строки клавиатуры из кнопки
-    private List<InlineKeyboardButton> createKeyboardRow(Button button) {
+    private List<InlineKeyboardButton> createKeyboardRow(Button button)
+    {
         InlineKeyboardButton inlineButton = new InlineKeyboardButton();
         inlineButton.setText(button.getText());
         inlineButton.setCallbackData(button.getData());
         return List.of(inlineButton);
     }
 
-
-
     @Getter
-    public static class QuestionData {
+    public static class QuestionData
+    {
         private String question;
         private List<Button> buttons;
         private List<Button> backButtons;
@@ -1275,7 +1278,8 @@ public class TelegramBot extends TelegramLongPollingBot
     }
 
     @Getter
-    public static class Button {
+    public static class Button
+    {
         private String text;
         private String data;
 
@@ -1288,10 +1292,12 @@ public class TelegramBot extends TelegramLongPollingBot
         }
     }
 
-    public class JsonUtil {
+    public class JsonUtil
+    {
         private static final String JSON_FILE = "src/main/resources/questions.json";
 
-        public static List<QuestionData> loadQuestionData() throws IOException {
+        public static List<QuestionData> loadQuestionData() throws IOException
+        {
             ObjectMapper mapper = new ObjectMapper();
             return List.of(mapper.readValue(new File(JSON_FILE), QuestionData[].class));
         }
